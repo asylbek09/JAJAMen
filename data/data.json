@@ -1,0 +1,155 @@
+{
+  "city": {
+    "Downtown": {
+      "north": "River North",
+      "south": "South Loop",
+      "east": "Grant Park",
+      "west": "Greektown",
+      "item": "knife",
+      "villain": 0
+    },
+    "River North": {
+      "north": "Old Town",
+      "south": "Downtown",
+      "east": "Streeterville",
+      "west": "River West",
+      "item": "pistol",
+      "villain": 0
+    },
+    "South Loop": {
+      "north": "Downtown",
+      "south": "Chinatown",
+      "east": "Field Museum",
+      "west": "Pilsen",
+      "item": "rifle",
+      "villain": 0
+    },
+    "Grant Park": {
+      "north": "Streeterville",
+      "south": "Field Museum",
+      "east": "Lake Michigan",
+      "west": "Downtown",
+      "item": "Armor",
+      "villain": 0
+    },
+    "Greektown": {
+      "north": "River West",
+      "south": "Pilsen",
+      "east": "Downtown",
+      "west": "United Center",
+      "item": "greek yogurt",
+      "villain": 0
+    },
+    "Old Town": {
+      "south": "River North",
+      "item": "helmet",
+      "villain": 0
+    },
+    "Streeterville": {
+      "west": "River North",
+      "south": "Grant Park",
+      "item": "pistol",
+      "villain": 0
+    },
+    "River West": {
+      "east": "River North",
+      "south": "Greektown",
+      "item": "knife",
+      "villain": 0
+    },
+    "Chinatown": {
+      "north": "South Loop",
+      "item": "venom",
+      "villain": 0
+    },
+    "Field Museum": {
+      "north": "Grant Park",
+      "west": "South Loop",
+      "item": "rifle",
+      "villain": 0
+    },
+    "Lake Michigan": {
+      "west": "Grant Park",
+      "item": "time gem",
+      "villain": 0
+    },
+    "Pilsen": {
+      "north": "Greektown",
+      "east": "South Loop",
+      "item": "power gem",
+      "villain": 0
+    },
+    "United Center": {
+      "east": "Greektown",
+      "item": "knife",
+      "villain": 0
+    }
+  },
+  "villains": {
+    "Magneto": {
+      "health": 20,
+      "power": {
+        "magnetism": 9
+      }
+    },
+    "Apocalypse": {
+      "health": 17,
+      "power": {
+        "bestowal": 9
+      }
+    },
+    "Mystique": {
+      "health": 10,
+      "power": {
+        "shapeshift": 6
+      }
+    },
+    "Sabretooth": {
+      "health": 14,
+      "power": {
+        "claw": 7
+      }
+    },
+    "Juggernaut": {
+      "health": 11,
+      "power": {
+        "super": 7
+      }
+    }
+  },
+  "heroes": {
+    "Professor X": {
+      "health": 20,
+      "power": {
+        "telekinesis": 10
+      }
+    },
+    "Beast": {
+      "health": 17,
+      "power": {
+        "leap": 6
+      }
+    },
+    "Wolverine": {
+      "health": 18,
+      "power": {
+        "claw": 9
+      }
+    },
+    "Cyclops": {
+      "health": 15,
+      "power": {
+        "beam": 6
+      }
+    },
+    "Phoenix": {
+      "health": 19,
+      "power": {
+        "telekinesis": 9
+      }
+    }
+  },
+  "steroid": {
+    "health": 5
+  }
+}
