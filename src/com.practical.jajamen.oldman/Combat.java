@@ -15,5 +15,15 @@ public class Combat {
                 + hero.getPowerLimit() + villain.getName() + "s health: " + villain_health + " , power and damage: "
                 + villain.getPower() + " / " + villain.getPowerLimit());
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        while (hero_health != 0 && villain_health != 0) {
+            System.out.print("Enter (p) to use your power or heal (h)? ");
+            String action = in.readLine();
+            if (action.equals("h")) {
+                hero.setHealth(hero.getSteroid());
+            } else {
+                villain_health -= hero.getPowerLimit();
+                hero_health -= villain.getPowerLimit();
+            }
+        }
     }
 }
