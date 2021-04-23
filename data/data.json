@@ -3,52 +3,41 @@
 
   "city": {
     "El Paso": {
-      "north": "River North",
-      "south": "South Loop",
-      "east": "Grant Park",
-      "west": "Greektown",
-      "item": "",
-      "villain": 0,
+      "Main mission": "Oklahoma City",
+      "item": "steroid",
+      "villain": "XXXXX",
       "description" : ""
     },
     "Oklahoma City": {
-      "north": "Old Town",
-      "south": "Downtown",
-      "east": "Streeterville",
-      "west": "River West",
+      "Main Mission": "North Mexico",
+      "Side Mission": "Reaver's Lair",
       "item": "",
-      "villain": 0,
+      "villain": "XXXXXX",
       "description" : ""
     },
     "North Mexico": {
-      "north": "Downtown",
-      "south": "Chinatown",
-      "east": "Field Museum",
-      "west": "Pilsen",
-      "item": "",
-      "villain": 0,
+      "Main Mission": "North Dakota",
+      "Side Mission": "Chinatown",
+      "item": "steroid",
+      "villain": "XXXXXX",
       "description" : ""
     },
     "North Dakota": {
-      "north": "Streeterville",
-      "south": "Field Museum",
-      "east": "Lake Michigan",
-      "west": "Downtown",
+      "Main Mission": "Canadian Border",
+      "Side Mission": "The Munson Family",
       "item": "",
       "villain": 0,
       "description" : ""
     },
     "Canadian Border": {
-      "north": "River West",
-      "south": "Pilsen",
-      "east": "Downtown",
-      "west": "United Center",
+      "Main Mission": "River North",
+      "Side Mission": "XXXX",
       "item": "",
       "villain": 0,
       "description" : ""
     },
     "Eden": {
-      "south": "River North",
+      "Main Mission": "Survive and be Happy, Logan and X are dead",
       "item": "",
       "villain": 0,
       "description" : ""
