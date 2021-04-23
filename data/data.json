@@ -1,88 +1,57 @@
 {
+  "intro" : "Story how Logan is in this situation",
+
   "city": {
-    "Downtown": {
+    "El Paso": {
       "north": "River North",
       "south": "South Loop",
       "east": "Grant Park",
       "west": "Greektown",
-      "item": "knife",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "River North": {
+    "Oklahoma City": {
       "north": "Old Town",
       "south": "Downtown",
       "east": "Streeterville",
       "west": "River West",
-      "item": "pistol",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "South Loop": {
+    "North Mexico": {
       "north": "Downtown",
       "south": "Chinatown",
       "east": "Field Museum",
       "west": "Pilsen",
-      "item": "rifle",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "Grant Park": {
+    "North Dakota": {
       "north": "Streeterville",
       "south": "Field Museum",
       "east": "Lake Michigan",
       "west": "Downtown",
-      "item": "Armor",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "Greektown": {
+    "Canadian Border": {
       "north": "River West",
       "south": "Pilsen",
       "east": "Downtown",
       "west": "United Center",
-      "item": "greek yogurt",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "Old Town": {
+    "Eden": {
       "south": "River North",
-      "item": "helmet",
-      "villain": 0
-    },
-    "Streeterville": {
-      "west": "River North",
-      "south": "Grant Park",
-      "item": "pistol",
-      "villain": 0
-    },
-    "River West": {
-      "east": "River North",
-      "south": "Greektown",
-      "item": "knife",
-      "villain": 0
-    },
-    "Chinatown": {
-      "north": "South Loop",
-      "item": "venom",
-      "villain": 0
-    },
-    "Field Museum": {
-      "north": "Grant Park",
-      "west": "South Loop",
-      "item": "rifle",
-      "villain": 0
-    },
-    "Lake Michigan": {
-      "west": "Grant Park",
-      "item": "time gem",
-      "villain": 0
-    },
-    "Pilsen": {
-      "north": "Greektown",
-      "east": "South Loop",
-      "item": "power gem",
-      "villain": 0
-    },
-    "United Center": {
-      "east": "Greektown",
-      "item": "knife",
-      "villain": 0
+      "item": "",
+      "villain": 0,
+      "description" : ""
     }
   },
   "villains": {
