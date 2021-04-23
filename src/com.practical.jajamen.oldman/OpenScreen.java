@@ -1,6 +1,5 @@
 package com.practical.jajamen.oldman;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class OpenScreen {
@@ -15,28 +14,24 @@ public class OpenScreen {
                 " ╚═════╝╚══════╚═════╝     ╚═╝     ╚═╚═╝  ╚═╚═╝  ╚═══╚═╝    ╚═╝  ╚═══╚══════╝╚══╝╚══╝        ╚═╝  ╚═╝  ╚═╚═╝╚═════╚═╝  ╚═╚═════");
 
 //Switch case to prompt the user to pick an option
-        printInstructions();
         boolean quit = false;
-
         int choice;
+
+        printInstructions();
         while (!quit) {
-            try{
-                System.out.println("Enter your choice: ");
-                choice = scanner.nextInt();
-                scanner.nextLine();
-                switch (choice) {
-                    case 1:
-                        startGame();
-                        break;
-                    case 2:
-                        creatorDescription();
-                        break;
-                    case 3:
-                        return;
-                }
-            }catch(InputMismatchException e){
-                System.out.println("That's an invalid input!");
-                break;
+            System.out.println("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    startGame();
+                    break;
+                case 2:
+                    creatorDescription();
+                    break;
+                case 3:
+                    return;
             }
         }
     }
@@ -48,7 +43,7 @@ public class OpenScreen {
         System.out.println("\t 3 - Quit and miss out on greatness");
     }
 
-    //Game starts when user pressed #1 and the intro to the game will begin
+//Game starts when user pressed #1 and the intro to the game will begin
     public static void startGame() {
 
         String text = "Hey, It’s your favorite antihero Deadpool here! \n" +
@@ -72,7 +67,7 @@ public class OpenScreen {
     }
 
 
-    public static void creatorDescription() {
+    public static void creatorDescription(){
         System.out.println("These creator are the best!!!");
 
     }
