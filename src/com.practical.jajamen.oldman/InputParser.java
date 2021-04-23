@@ -11,7 +11,7 @@ public class InputParser {
         public static void main(String[] args) {
                 JSONParser parser = new JSONParser();
                 try {
-                        Object obj = parser.parse(new FileReader("/Users/elhamiae/Documents/AmazonSDE/Capstone/JAJAMen/data/data.json"));
+                        Object obj = parser.parse(new FileReader("/Users/elhamiae/Documents/Amazon SDE/Capstone/JAJAMen/data/data.json"));
                         JSONObject jsonObject = (JSONObject)obj;
                         JSONArray cities = (JSONArray)jsonObject.get("City");
 
