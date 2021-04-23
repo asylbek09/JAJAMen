@@ -18,10 +18,18 @@ import java.util.concurrent.TimeUnit;
 
 /*
  * This class is designed to represent the game for the benefit of the player
- * Adventure will be passed to this class in order to visual the game
+ * Adventure will be passed into this class in order to help visualize the game
  * Options for menu creation
  */
-public class UserInterface {
+class UserInterface {
+//    Adventure adventure = null;
+
+    UserInterface() {
+    }
+
+//    UserInterface(Adventure adventure) {
+//        this.adventure = adventure;
+//    }
 
     // creates a gap between components
     private EmptySpace space() {
