@@ -30,7 +30,7 @@ public class Character {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+        this.health += health;
     }
 
     public Map<String, Integer> getPower() {
