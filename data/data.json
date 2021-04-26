@@ -17,10 +17,16 @@
     },
     "North Mexico": {
       "Main Mission": "North Dakota",
-      "Side Mission": "Chinatown",
+      "Side Mission": "Save Caliban",
       "item": "steroid",
-      "villain": "XXXXXX",
-      "description" : ""
+      "villain": "Pierce",
+      "description" : "After you failed to rescue Gabriela on time, you quickly drive back to the old factory. \nnPierce, after mutants, arrives there, looking for the Laura and Charles...After Laura hits Pierece, Caliban gets captured by the meavers...Then they attack the factory. \nYou put Charles in the lemo and better try to escape...\nLaura however still is in the factory...\nDo you want to rescue Laura?"
+    },
+    "Save Caliban": {
+      "Main Mission": "North Dakota",
+      "item": "steroid",
+      "villain": "Dr Royce",
+      "description": "Rescue Caliban from capture!\nCaliban is suffering a lot from the tortures and hasn't quite gave up on his fellows. He is held in a fully secured van and with Laura and Charles super powers you might have shot!\nYou gotta make it fast and quick, get in take caliban, and get out...MAKE SURE YOU HAVE HIGH HEALTH LEVEL...RISK IS HIGH, KILL EM FAST...\n"
     },
     "North Dakota": {
       "Main Mission": "Canadian Border",
@@ -118,6 +124,20 @@
       "health": 19,
       "power": {
         "telekinesis": 9
+      }
+    },
+    "Pierce" : {
+      "name": "Pierce",
+      "health": 11,
+      "power": {
+        "Metal Hand": 6
+      }
+    },
+    "Dr Royce" : {
+      "name": "Royce",
+      "health": 13,
+      "power": {
+        "Evil iPad" : 9
       }
     }
   },
