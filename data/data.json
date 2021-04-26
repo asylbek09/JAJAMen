@@ -1,88 +1,52 @@
 {
+  "intro" : "In the near future, a weary Logan cares for an ailing Professor X at a remote outpost on the Mexican border. His plan to hide from the outside world gets upended when he meets a young mutant (Laura/X-23) who is very much like him. Logan must now protect the girl and battle the dark forces (The Reavers and X-24) that want to capture her.",
+
   "city": {
-    "Downtown": {
-      "north": "River North",
-      "south": "South Loop",
-      "east": "Grant Park",
-      "west": "Greektown",
-      "item": "knife",
-      "villain": 0
+    "El Paso": {
+      "Main mission": "Oklahoma City",
+      "item": "steroid",
+      "villain": "XXXXX",
+      "description" : ""
     },
-    "River North": {
-      "north": "Old Town",
-      "south": "Downtown",
-      "east": "Streeterville",
-      "west": "River West",
-      "item": "pistol",
-      "villain": 0
+    "Oklahoma City": {
+      "Main Mission": "North Mexico",
+      "Side Mission": "Reaver's Lair",
+      "item": "",
+      "villain": "XXXXXX",
+      "description" : ""
     },
-    "South Loop": {
-      "north": "Downtown",
-      "south": "Chinatown",
-      "east": "Field Museum",
-      "west": "Pilsen",
-      "item": "rifle",
-      "villain": 0
+    "North Mexico": {
+      "Main Mission": "North Dakota",
+      "Side Mission": "Chinatown",
+      "item": "steroid",
+      "villain": "XXXXXX",
+      "description" : ""
     },
-    "Grant Park": {
-      "north": "Streeterville",
-      "south": "Field Museum",
-      "east": "Lake Michigan",
-      "west": "Downtown",
-      "item": "Armor",
-      "villain": 0
+    "North Dakota": {
+      "Main Mission": "Canadian Border",
+      "Side Mission": "The Munson Family",
+      "item": "",
+      "villain": "The Reavers",
+      "description" : "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\n\nDo you want to help them to catch horses or keep moving?"
     },
-    "Greektown": {
-      "north": "River West",
-      "south": "Pilsen",
-      "east": "Downtown",
-      "west": "United Center",
-      "item": "greek yogurt",
-      "villain": 0
+    "The Munson Family": {
+      "Main Mission": "Canadian Border",
+      "item": "",
+      "villain": "X-24",
+      "description" : "You are invited for a decent meal, to show the appreciation!\nThe Munson family and the “Howlett” family all sit around a table covered with food, heads bowed as the son says grace. \nAll except Laura who looks around at the family pictures, the religious decorations (they are everywhere), the warm furnishings. Another strange place.\nSuddenly you hear a vehicle voice outside and realize that The Reavers arrive to capture you and Laura (X-23).\n\nYou have a choice to run and save Laura, but you put to risk The Munson family or fight but risk your own life and Laura's?"
     },
-    "Old Town": {
-      "south": "River North",
-      "item": "helmet",
-      "villain": 0
+    "Canadian Border": {
+      "Main Mission": "River North",
+      "Side Mission": "XXXX",
+      "item": "",
+      "villain": 0,
+      "description" : ""
     },
-    "Streeterville": {
-      "west": "River North",
-      "south": "Grant Park",
-      "item": "pistol",
-      "villain": 0
-    },
-    "River West": {
-      "east": "River North",
-      "south": "Greektown",
-      "item": "knife",
-      "villain": 0
-    },
-    "Chinatown": {
-      "north": "South Loop",
-      "item": "venom",
-      "villain": 0
-    },
-    "Field Museum": {
-      "north": "Grant Park",
-      "west": "South Loop",
-      "item": "rifle",
-      "villain": 0
-    },
-    "Lake Michigan": {
-      "west": "Grant Park",
-      "item": "time gem",
-      "villain": 0
-    },
-    "Pilsen": {
-      "north": "Greektown",
-      "east": "South Loop",
-      "item": "power gem",
-      "villain": 0
-    },
-    "United Center": {
-      "east": "Greektown",
-      "item": "knife",
-      "villain": 0
+    "Eden": {
+      "Main Mission": "Survive and be Happy, Logan and X are dead",
+      "item": "",
+      "villain": 0,
+      "description" : ""
     }
   },
   "villains": {
