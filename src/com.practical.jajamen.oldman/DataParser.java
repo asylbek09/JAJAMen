@@ -33,7 +33,7 @@ class DataParser {
     static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
     // the assumed file directory ("./" is not required, the following path is considered relative)
-    static String FILE_PATH = "data/%s.json";
+    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
 
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
