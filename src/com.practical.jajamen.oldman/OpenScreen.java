@@ -3,46 +3,47 @@ package com.practical.jajamen.oldman;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class OpenScreen {
-    // TODO: convert to a class
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+ class openScreen {
+     // TODO: convert to a class
+     public void introScreen() {
+         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(" ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
-                "██╔═══████║    ██╔══██╗    ████╗ ██████╔══██████╗  ██║      ████╗  ████╔════██║    ██║    ╚══██╔══██╔══██████╔════██║ ██╔██╔════╝\n" +
-                "██║   ████║    ██║  ██║    ██╔████╔███████████╔██╗ ██║      ██╔██╗ ███████╗ ██║ █╗ ██║       ██║  ██████╔████║    █████╔╝███████╗\n" +
-                "██║   ████║    ██║  ██║    ██║╚██╔╝████╔══████║╚██╗██║      ██║╚██╗████╔══╝ ██║███╗██║       ██║  ██╔══██████║    ██╔═██╗╚════██║\n" +
-                "╚██████╔█████████████╔╝    ██║ ╚═╝ ████║  ████║ ╚████▄█╗    ██║ ╚███████████╚███╔███╔╝       ██║  ██║  ████╚████████║  █████████║\n" +
-                " ╚═════╝╚══════╚═════╝     ╚═╝     ╚═╚═╝  ╚═╚═╝  ╚═══╚═╝    ╚═╝  ╚═══╚══════╝╚══╝╚══╝        ╚═╝  ╚═╝  ╚═╚═╝╚═════╚═╝  ╚═╚═════");
+         System.out.println
+                (" ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
+                 "██╔═══████║    ██╔══██╗    ████╗ ██████╔══██████╗  ██║      ████╗  ████╔════██║    ██║    ╚══██╔══██╔══██████╔════██║ ██╔██╔════╝\n" +
+                 "██║   ████║    ██║  ██║    ██╔████╔███████████╔██╗ ██║      ██╔██╗ ███████╗ ██║ █╗ ██║       ██║  ██████╔████║    █████╔╝███████╗\n" +
+                 "██║   ████║    ██║  ██║    ██║╚██╔╝████╔══████║╚██╗██║      ██║╚██╗████╔══╝ ██║███╗██║       ██║  ██╔══██████║    ██╔═██╗╚════██║\n" +
+                 "╚██████╔█████████████╔╝    ██║ ╚═╝ ████║  ████║ ╚████▄█╗    ██║ ╚███████████╚███╔███╔╝       ██║  ██║  ████╚████████║  █████████║\n" +
+                 " ╚═════╝╚══════╚═════╝     ╚═╝     ╚═╚═╝  ╚═╚═╝  ╚═══╚═╝    ╚═╝  ╚═══╚══════╝╚══╝╚══╝        ╚═╝  ╚═╝  ╚═╚═╝╚═════╚═╝  ╚═╚═════");
 
 //Switch case to prompt the user to pick an option
-        printInstructions();
-        boolean quit = false;
+         printInstructions();
+         boolean quit = false;
 
-        int choice;
-        while (!quit) {
-            try{
-                System.out.println("Enter your choice: ");
-                choice = scanner.nextInt();
-                scanner.nextLine();
-                switch (choice) {
-                    case 1:
-                        startGame();
-                        break;
-                    case 2:
-                        creatorDescription();
-                        break;
-                    case 3:
-                        return;
-                }
-            }catch(InputMismatchException e){
-                System.out.println("That's an invalid input!");
-                break;
-            }
-        }
-    }
+         int choice;
+         while (!quit) {
+             try {
+                 System.out.println("Enter your choice: ");
+                 choice = scanner.nextInt();
+                 scanner.nextLine();
+                 switch (choice) {
+                     case 1:
+                         startGame();
+                         break;
+                     case 2:
+                         creatorDescription();
+                         break;
+                     case 3:
+                         return;
+                 }
+             } catch (InputMismatchException e) {
+                 System.out.println("That's an invalid input!");
+                 break;
+             }
+         }
+     }
 
-    public static void printInstructions() {
+    public void printInstructions() {
         System.out.println("\n Press ");
         System.out.println("\t 1 - Start the game!");
         System.out.println("\t 2 - Learn how awesome the creators are!");
@@ -50,7 +51,7 @@ public class OpenScreen {
     }
 
     //Game starts when user pressed #1 and the intro to the game will begin
-    public static void startGame() {
+    public void startGame() {
 
         String text = "Hey, It’s your favorite antihero Deadpool here! \n" +
                 "You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\n" +
@@ -72,7 +73,7 @@ public class OpenScreen {
 
     }
 
-    public static void creatorDescription() {
+    public void creatorDescription() {
         System.out.println("These creator are the best!!!");
 
     }
