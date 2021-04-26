@@ -26,8 +26,14 @@
       "Main Mission": "Canadian Border",
       "Side Mission": "The Munson Family",
       "item": "",
-      "villain": 0,
-      "description" : ""
+      "villain": "The Reavers",
+      "description" : "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\n\nDo you want to help them to catch horses or keep moving?"
+    },
+    "The Munson Family": {
+      "Main Mission": "Canadian Border",
+      "item": "",
+      "villain": "X-24",
+      "description" : "You are invited for a decent meal, to show the appreciation!\nThe Munson family and the “Howlett” family all sit around a table covered with food, heads bowed as the son says grace. \nAll except Laura who looks around at the family pictures, the religious decorations (they are everywhere), the warm furnishings. Another strange place.\nSuddenly you hear a vehicle voice outside and realize that The Reavers arrive to capture you and Laura (X-23).\n\nYou have a choice to run and save Laura, but you put to risk The Munson family or fight but risk your own life and Laura's?"
     },
     "Canadian Border": {
       "Main Mission": "River North",
