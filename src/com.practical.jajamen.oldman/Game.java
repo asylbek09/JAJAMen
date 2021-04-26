@@ -64,4 +64,11 @@ class Game {
             }
         }
     }
+
+    public void showStatus() {
+        System.out.println("---------------------------------");
+        System.out.println("You are in the " + currentCity.get(0));
+        System.out.println("Your health: " + logan.getHealth());
+        System.out.println("---------------------------------");
+    }
 }

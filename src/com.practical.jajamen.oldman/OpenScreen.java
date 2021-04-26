@@ -27,7 +27,7 @@ public class OpenScreen {
         String text = "Hey, It’s your favorite antihero Deadpool here!\n" +
                 "You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\n" +
                 "God, I hate that guy.\n" +
-                "Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\n " +
+                "Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\n" +
                 "Logan also known as the dashingly good-looking, Wolverine.\n";
         //Code to have letter print one by one
         char[] charArr = text.toCharArray();
@@ -35,11 +35,20 @@ public class OpenScreen {
         for (int i = 0; i <= charArr.length - 1; i++) {
             System.out.print(charArr[i]);
             try {
-                Thread.sleep(35);
+                Thread.sleep(0);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void showInstructions() {
+        System.out.println("Commands:\n" +
+                "  go [north, south, east, west]\n" +
+                "  get [steroid]\n" +
+                "  fight [villain name]\n" +
+                "  run\n" +
+                "  q [to quit the game]");
     }
 
     public void creatorDescription() {
