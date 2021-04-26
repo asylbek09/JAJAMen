@@ -21,20 +21,19 @@ public class DataParserTest {
     @Test
     public void getAllCities_shouldReturnTrue() {
         List<String> expected = Arrays.asList(
-            "Downtown", "River North", "South Loop", "Grant Park", "Greektown", "Old Town", "Streeterville",
-            "River West", "Chinatown", "Field Museum", "Lake Michigan", "Pilsen", "United Center"
+            "El Paso", "Oklahoma City", "North Mexico", "North Dakota", "The Munson Family", "Canadian Border", "Eden"
         );
 
-        assertEquals(13, dp.getAllCities().size());
+        assertEquals(7, dp.getAllCities().size());
         assertEquals(expected, dp.getAllCities());
     }
 
     @Test
     public void getCityKeys_shouldReturnTrue() {
-        List<String> expected = Arrays.asList("south", "item", "villain");
+        List<String> expected = Arrays.asList("Main mission", "item", "villain", "description");
 
-        assertEquals(3, dp.getCityKeys("Old Town").size());
-        assertEquals(expected, dp.getCityKeys("Old Town"));
+        assertEquals(4, dp.getCityKeys("El Paso").size());
+        assertEquals(expected, dp.getCityKeys("El Paso"));
     }
 
     @Test

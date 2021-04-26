@@ -26,7 +26,7 @@
       "Main Mission": "Canadian Border",
       "Side Mission": "The Munson Family",
       "item": "",
-      "villain": "The Reavers",
+      "villain": "Juggernaut",
       "description" : "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\n\nDo you want to help them to catch horses or keep moving?"
     },
     "The Munson Family": {
@@ -106,11 +106,11 @@
         "claw": 9
       }
     },
-    "Cyclops": {
-      "name": "Cyclops",
-      "health": 15,
+    "X-24": {
+      "name": "X-24",
+      "health": 18,
       "power": {
-        "beam": 6
+        "claw": 9
       }
     },
     "Phoenix": {
