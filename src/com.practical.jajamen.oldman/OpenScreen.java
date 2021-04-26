@@ -1,47 +1,18 @@
 package com.practical.jajamen.oldman;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+public class OpenScreen {
 
- class openScreen {
-     // TODO: convert to a class
-     public void introScreen() {
-         Scanner scanner = new Scanner(System.in);
-
-         System.out.println
+    public void introScreen() {
+        System.out.println
                 (" ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
-                 "██╔═══████║    ██╔══██╗    ████╗ ██████╔══██████╗  ██║      ████╗  ████╔════██║    ██║    ╚══██╔══██╔══██████╔════██║ ██╔██╔════╝\n" +
-                 "██║   ████║    ██║  ██║    ██╔████╔███████████╔██╗ ██║      ██╔██╗ ███████╗ ██║ █╗ ██║       ██║  ██████╔████║    █████╔╝███████╗\n" +
-                 "██║   ████║    ██║  ██║    ██║╚██╔╝████╔══████║╚██╗██║      ██║╚██╗████╔══╝ ██║███╗██║       ██║  ██╔══██████║    ██╔═██╗╚════██║\n" +
-                 "╚██████╔█████████████╔╝    ██║ ╚═╝ ████║  ████║ ╚████▄█╗    ██║ ╚███████████╚███╔███╔╝       ██║  ██║  ████╚████████║  █████████║\n" +
-                 " ╚═════╝╚══════╚═════╝     ╚═╝     ╚═╚═╝  ╚═╚═╝  ╚═══╚═╝    ╚═╝  ╚═══╚══════╝╚══╝╚══╝        ╚═╝  ╚═╝  ╚═╚═╝╚═════╚═╝  ╚═╚═════");
+                        "██╔═══████║    ██╔══██╗    ████╗ ██████╔══██████╗  ██║      ████╗  ████╔════██║    ██║    ╚══██╔══██╔══██████╔════██║ ██╔██╔════╝\n" +
+                        "██║   ████║    ██║  ██║    ██╔████╔███████████╔██╗ ██║      ██╔██╗ ███████╗ ██║ █╗ ██║       ██║  ██████╔████║    █████╔╝███████╗\n" +
+                        "██║   ████║    ██║  ██║    ██║╚██╔╝████╔══████║╚██╗██║      ██║╚██╗████╔══╝ ██║███╗██║       ██║  ██╔══██████║    ██╔═██╗╚════██║\n" +
+                        "╚██████╔█████████████╔╝    ██║ ╚═╝ ████║  ████║ ╚████▄█╗    ██║ ╚███████████╚███╔███╔╝       ██║  ██║  ████╚████████║  █████████║\n" +
+                        " ╚═════╝╚══════╚═════╝     ╚═╝     ╚═╚═╝  ╚═╚═╝  ╚═══╚═╝    ╚═╝  ╚═══╚══════╝╚══╝╚══╝        ╚═╝  ╚═╝  ╚═╚═╝╚═════╚═╝  ╚═╚═════");
 
-//Switch case to prompt the user to pick an option
-         printInstructions();
-         boolean quit = false;
-
-         int choice;
-         while (!quit) {
-             try {
-                 System.out.println("Enter your choice: ");
-                 choice = scanner.nextInt();
-                 scanner.nextLine();
-                 switch (choice) {
-                     case 1:
-                         startGame();
-                         break;
-                     case 2:
-                         creatorDescription();
-                         break;
-                     case 3:
-                         return;
-                 }
-             } catch (InputMismatchException e) {
-                 System.out.println("That's an invalid input!");
-                 break;
-             }
-         }
-     }
+        printInstructions();
+    }
 
     public void printInstructions() {
         System.out.println("\n Press ");
@@ -53,28 +24,34 @@ import java.util.Scanner;
     //Game starts when user pressed #1 and the intro to the game will begin
     public void startGame() {
 
-        String text = "Hey, It’s your favorite antihero Deadpool here! \n" +
+        String text = "Hey, It’s your favorite antihero Deadpool here!\n" +
                 "You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\n" +
                 "God, I hate that guy.\n" +
-                "Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros! \n " +
-                "Logan also known as the dashingly good-looking, Wolverine.";
+                "Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\n" +
+                "Logan also known as the dashingly good-looking, Wolverine.\n";
         //Code to have letter print one by one
         char[] charArr = text.toCharArray();
 
         for (int i = 0; i <= charArr.length - 1; i++) {
-
             System.out.print(charArr[i]);
             try {
-                Thread.sleep(45);
+                Thread.sleep(0);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
 
+    public void showInstructions() {
+        System.out.println("Commands:\n" +
+                "  go [north, south, east, west]\n" +
+                "  get [steroid]\n" +
+                "  fight [villain name]\n" +
+                "  run\n" +
+                "  q [to quit the game]");
     }
 
     public void creatorDescription() {
-        System.out.println("These creator are the best!!!");
-
+        System.out.println("These creators are the best!!!");
     }
 }
