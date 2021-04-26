@@ -1,7 +1,8 @@
 package com.practical.jajamen.oldman;
 
-import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 /*
  * This is where the core of the project should be.
@@ -36,5 +37,31 @@ class Game {
 //        );
 //        System.out.println(cities);
 //        System.out.println(currentCity);
+        OpenScreen game1 = new OpenScreen();
+        game1.introScreen();
+        Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+
+        int choice;
+        while (!quit) {
+            try {
+                System.out.println("Enter your choice: ");
+                choice = scanner.nextInt();
+                scanner.nextLine();
+                switch (choice) {
+                    case 1:
+                        game1.startGame();
+                        break;
+                    case 2:
+                        game1.creatorDescription();
+                        break;
+                    case 3:
+                        return;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("That's an invalid input!");
+                break;
+            }
+        }
     }
 }
