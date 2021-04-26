@@ -1,19 +1,24 @@
 {
-  "intro" : "In the near future, a weary Logan cares for an ailing Professor X at a remote outpost on the Mexican border. His plan to hide from the outside world gets upended when he meets a young mutant (Laura/X-23) who is very much like him. Logan must now protect the girl and battle the dark forces (The Reavers and X-24) that want to capture her.",
-
+  "intro": "In the near future, a weary Logan cares for an ailing Professor X at a remote outpost on the Mexican border. His plan to hide from the outside world gets upended when he meets a young mutant (Laura/X-23) who is very much like him. Logan must now protect the girl and battle the dark forces (The Reavers and X-24) that want to capture her.",
   "city": {
     "El Paso": {
       "Main mission": "Oklahoma City",
       "item": "steroid",
-      "villain": "XXXXX",
-      "description" : ""
+      "villain": "Gang Members",
+      "description": "Logan wakes up in his car and hears gang members trying to steal his rims to sell \n.Logan: ...Uh. Please stop, guys. Those,.. those are chrome plated lugs.\nGang members: **They shoot him in the chest and Logan  falls over**\nLogan:…….Fuck…..Guys... seriously...(gets to his feet).You don’t wanna do this. "
     },
     "Oklahoma City": {
       "Main Mission": "North Mexico",
       "Side Mission": "Reaver's Lair",
-      "item": "",
-      "villain": "XXXXXX",
-      "description" : ""
+      "item": "steroid",
+      "villain": "Reavers",
+      "description": "**Logan gets a call about a job and learns the truth about Laura**\n\nGabriela: Logan, Laura is a clone of you, she’s your daughter.\n"
+    },
+    "Reaver's Lair": {
+      "Main Mission": "North Mexico",
+      "item": "steroid",
+      "villain": "Revears",
+      "description": "Help Mystique so you can get money to buy a boat for yourself and professor X, Break into Revear's to help Mystique gather the documentation ."
     },
     "North Mexico": {
       "Main Mission": "North Dakota",
@@ -25,7 +30,7 @@
     "Save Caliban": {
       "Main Mission": "North Dakota",
       "item": "steroid",
-      "villain": "Dr Royce",
+      "villain": "Dr Rice",
       "description": "Rescue Caliban from capture!\nCaliban is suffering a lot from the tortures and hasn't quite gave up on his fellows. He is held in a fully secured van and with Laura and Charles super powers you might have shot!\nYou gotta make it fast and quick, get in take caliban, and get out...MAKE SURE YOU HAVE HIGH HEALTH LEVEL...RISK IS HIGH, KILL EM FAST...\n"
     },
     "North Dakota": {
@@ -33,26 +38,26 @@
       "Side Mission": "The Munson Family",
       "item": "",
       "villain": "Juggernaut",
-      "description" : "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\n\nDo you want to help them to catch horses or keep moving?"
+      "description": "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\n\nDo you want to help them to catch horses or keep moving?"
     },
     "The Munson Family": {
       "Main Mission": "Canadian Border",
       "item": "",
       "villain": "X-24",
-      "description" : "You are invited for a decent meal, to show the appreciation!\nThe Munson family and the “Howlett” family all sit around a table covered with food, heads bowed as the son says grace. \nAll except Laura who looks around at the family pictures, the religious decorations (they are everywhere), the warm furnishings. Another strange place.\nSuddenly you hear a vehicle voice outside and realize that The Reavers arrive to capture you and Laura (X-23).\n\nYou have a choice to run and save Laura, but you put to risk The Munson family or fight but risk your own life and Laura's?"
+      "description": "You are invited for a decent meal, to show the appreciation!\nThe Munson family and the “Howlett” family all sit around a table covered with food, heads bowed as the son says grace. \nAll except Laura who looks around at the family pictures, the religious decorations (they are everywhere), the warm furnishings. Another strange place.\nSuddenly you hear a vehicle voice outside and realize that The Reavers arrive to capture you and Laura (X-23).\n\nYou have a choice to run and save Laura, but you put to risk The Munson family or fight but risk your own life and Laura's?"
     },
     "Canadian Border": {
       "Main Mission": "River North",
       "Side Mission": "XXXX",
       "item": "",
       "villain": 0,
-      "description" : ""
+      "description": ""
     },
     "Eden": {
       "Main Mission": "Survive and be Happy, Logan and X are dead",
       "item": "",
-      "villain": 0,
-      "description" : ""
+      "villain": null,
+      "description": "You've reached the end. Then you can transport Laura and the young mutants to safety"
     }
   },
   "mutants": {
@@ -126,6 +131,13 @@
         "telekinesis": 9
       }
     },
+    "Reavers": {
+      "name": "Reavers",
+      "health": 10,
+      "power": {
+        "magnetism": 5
+       }
+    },
     "Pierce" : {
       "name": "Pierce",
       "health": 11,
@@ -133,8 +145,8 @@
         "Metal Hand": 6
       }
     },
-    "Dr Royce" : {
-      "name": "Royce",
+    "Dr Rice" : {
+      "name": "Rice",
       "health": 13,
       "power": {
         "Evil iPad" : 9
