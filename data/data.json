@@ -49,64 +49,72 @@
       "description" : ""
     }
   },
-  "villains": {
+  "mutants": {
     "Magneto": {
+      "name": "Magneto",
       "health": 20,
       "power": {
         "magnetism": 9
       }
     },
     "Apocalypse": {
+      "name": "Apocalypse",
       "health": 17,
       "power": {
         "bestowal": 9
       }
     },
     "Mystique": {
+      "name": "Mystique",
       "health": 10,
       "power": {
         "shapeshift": 6
       }
     },
     "Sabretooth": {
+      "name": "Sabretooth",
       "health": 14,
       "power": {
         "claw": 7
       }
     },
     "Juggernaut": {
+      "name": "Juggernaut",
       "health": 11,
       "power": {
         "super": 7
       }
-    }
-  },
-  "heroes": {
+    },
     "Professor X": {
+      "name": "Professor X",
       "health": 20,
       "power": {
         "telekinesis": 10
       }
     },
     "Beast": {
+      "name": "Beast",
       "health": 17,
       "power": {
         "leap": 6
       }
     },
     "Wolverine": {
+      "name": "Wolverine",
       "health": 18,
       "power": {
         "claw": 9
       }
     },
     "Cyclops": {
+      "name": "Cyclops",
       "health": 15,
       "power": {
         "beam": 6
       }
     },
     "Phoenix": {
+      "name": "Phoenix",
       "health": 19,
       "power": {
         "telekinesis": 9
@@ -117,3 +125,4 @@
     "health": 5
   }
 }
+

@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class OpenScreen {
+    // TODO: convert to a class
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
