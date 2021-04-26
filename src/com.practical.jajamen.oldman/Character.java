@@ -1,5 +1,6 @@
 package com.practical.jajamen.oldman;
 import java.util.Map;
+import java.util.Objects;
 
 public class Character {
     protected String name;
@@ -64,5 +65,21 @@ public class Character {
                 ", power=" + power +
                 ", steroid=" + steroid +
                 '}';
+    }
+
+    // jeff: created equals in order to compare diff instances
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Character character = (Character) o;
+        return getName().equals(character.getName()) &&
+                getPower().equals(character.getPower());
+    }
+
+    // jeff: created hashcode in order to compare diff instances
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getPower());
     }
 }
