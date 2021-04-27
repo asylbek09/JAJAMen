@@ -69,8 +69,8 @@ class DataParser {
     }
 
     // currently set to return an int - just like the json file
-    public int getCityVillain(String cityName) {
-        return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asInt();
+    public String getCityVillain(String cityName) {
+        return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asText();
     }
 
     protected List<String> getCityKeys(String cityName) {
