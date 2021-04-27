@@ -67,7 +67,6 @@ public class Character {
                 '}';
     }
 
-    // jeff: created equals in order to compare diff instances
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
