@@ -35,8 +35,8 @@ class DataParser {
     static String POWER_NODE = "power";
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
-    static String FILE_PATH = "data/%s.json";
-    // static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
+    //static String FILE_PATH = "data/%s.json";
+    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
 
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
@@ -68,7 +68,7 @@ class DataParser {
             if (property.equals("item"))
                 System.out.println("You can acquire:\t" + getCityItem(cityName));
             if (property.equals("villain"))
-                System.out.println("You can fight:\t" + getCityVillain(cityName));
+                System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n");
             if (property.equals("description"))
                 System.out.println("Description:\t" + getCityDescription(cityName) + "\n");
         }

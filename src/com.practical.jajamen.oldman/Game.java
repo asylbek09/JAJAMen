@@ -50,7 +50,7 @@ class Game {
          * !!!!!!!!!!!!!!!!!! HEY THERE !!!!!!!!!!!!!!!!!!
          * all the code that runs after the intro goes here
          */
-        while (!isGameFinished()){
+        while (!isGameFinished()) {
 
             // resets the user's last input
             inputParser.setVerb("");
@@ -102,7 +102,7 @@ class Game {
                             try {
                                 // creates a fight between logan and the city villain
                                 new Combat(logan, dataParser.createCharacter(dataParser.getCityVillain(getCurrentCity())));
-                            } catch(IOException e) {
+                            } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
