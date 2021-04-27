@@ -26,6 +26,12 @@ public class InputParserTest {
     }
 
     @Test
+    public void isAllowedCombatVerb() {
+        assertTrue(ip.isAllowedCombatVerb("fight"));
+        assertFalse(ip.isAllowedCombatVerb("TEST-VERB"));
+    }
+
+    @Test
     public void isAllowedSubject() {
         assertTrue(ip.isAllowedSubject("North Mexico", "steroid"));
         assertFalse(ip.isAllowedSubject("North Mexico", "TEST-SUBJECT"));
