@@ -4,12 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-/*
- * jeff:
- *  removed guts in order to create a class dedicated to parsing game data
- *  simple-json wasn't able to traverse nested objects
- *  changed JSON library, to jackson, in order to parse through nested objects in JSON game data
- */
 public class InputParser {
     static String SPACE_DELIMITER = " ";
     static String CHAR_DELIMITER = "";
@@ -17,7 +11,6 @@ public class InputParser {
 
     private Scanner scanner;
     private DataParser dataParser;
-    // doesn't need to hold currentInput (can recreate class to not require holding this)
     private List<String> currentInput;
 
     InputParser() {
@@ -58,19 +51,28 @@ public class InputParser {
         return Arrays.asList(input.split(SPACE_DELIMITER));
     }
 
-    public boolean isAllowedVerb(String input) {
-        // TODO: create test
+    // will check the player's input for a movement based verb
+    public boolean isAllowedMovementVerb(String input) {
         List<String> allowedVerbs = Arrays.asList(
-                // fill with movement based verbs
-                "go", "run", "hop", "skip", "jump", "walk", "mope", "meander", "wobble", "crawl", "grab"
+                // fill with verbs based on movement
+                "go", "run", "hop", "skip", "jump", "walk", "mope", "meander", "wobble", "crawl"
         );
         return allowedVerbs.contains(input);
     }
 
+    // will check the player's input for an acquiring based verb
+    public boolean isAllowedAcquireVerb(String input) {
+        List<String> allowedVerbs = Arrays.asList(
+                // fill with verbs based on acquiring
+                "grab", "get", "acquire", "attain", "snatch", "pilfer"
+        );
+        return allowedVerbs.contains(input);
+    }
+
+    // checks to see if the player can interact with a subject in their current city
     public boolean isAllowedSubject(String city, String input) {
-        // TODO: create test
         // should return all the things the player can interact with
-        List<Object> allowedVerbs = Arrays.asList(dataParser.getCityValues(city));
+        List<String> allowedVerbs = dataParser.getCityValues(city);
         return allowedVerbs.contains(input);
     }
 }

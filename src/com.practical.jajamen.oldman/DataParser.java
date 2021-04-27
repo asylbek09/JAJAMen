@@ -29,11 +29,12 @@ class DataParser {
     static String CITY_NODE = "city";
     static String CHARACTER_NODE = "mutants";
     static String ITEM_NODE = "item";
-    static String VILLAINS_NODE = "villains";
+    static String VILLAIN_NODE = "villain";
     static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
     // the assumed file directory ("./" is not required, the following path is considered relative)
-    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
+    static String FILE_PATH = "data/%s.json";
+    // static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
 
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
@@ -55,15 +56,12 @@ class DataParser {
         }
     }
 
-    public List<String> getCityDirections(String cityName) {
-        List<String> allowedDirections = Arrays.asList("north", "south", "east", "west");
-        List<String> result = new ArrayList<>();
-        root.path(CITY_NODE).path(cityName).fieldNames().forEachRemaining(property -> {
-            if (allowedDirections.contains(property)) {
-                result.add(property);
-            }
-        });
-        return result;
+    public String getCityMission(String missionType, String cityName) {
+        List<String> allowedMissionTypes =  Arrays.asList("Main Mission", "Side Mission");
+        if (!allowedMissionTypes.contains(missionType)) {
+            throw new IllegalArgumentException("Mission Type is not valid. Please input Main Mission OR Side Mission");
+        }
+        return root.path(CITY_NODE).path(cityName).path(missionType).asText();
     }
 
     public String getCityItem(String cityName) {
@@ -72,7 +70,7 @@ class DataParser {
 
     // currently set to return an int - just like the json file
     public int getCityVillain(String cityName) {
-        return root.path(CITY_NODE).path(cityName).path(VILLAINS_NODE).asInt();
+        return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asInt();
     }
 
     protected List<String> getCityKeys(String cityName) {
@@ -83,7 +81,7 @@ class DataParser {
 
     protected List<String> getCityValues(String cityName) {
         List<String> result = new ArrayList<>();
-        root.path(CITY_NODE).path(cityName).forEach(city -> result.add(city.asText()));
+        root.path(CITY_NODE).path(cityName).forEach(property -> result.add(property.asText()));
         return result;
     }
 
