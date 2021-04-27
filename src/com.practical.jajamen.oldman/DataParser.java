@@ -30,6 +30,7 @@ class DataParser {
     static String CHARACTER_NODE = "mutants";
     static String ITEM_NODE = "item";
     static String VILLAIN_NODE = "villain";
+    static String DESCRIPTION_NODE = "description";
     static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
 
@@ -55,6 +56,26 @@ class DataParser {
         } catch(IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void printArea(String cityName) {
+        List<String> areaInformation = getCityKeys(cityName);
+        for (String property : areaInformation) {
+            if (property.equals("Main Mission"))
+                System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName));
+            if (property.equals("Side Mission"))
+                System.out.println("You can travel to:\t" + getCityMission(property, cityName));
+            if (property.equals("item"))
+                System.out.println("You can acquire:\t" + getCityItem(cityName));
+            if (property.equals("villain"))
+                System.out.println("You can fight:\t" + getCityVillain(cityName));
+            if (property.equals("description"))
+                System.out.println("Description:\t" + getCityDescription(cityName) + "\n");
+        }
+    }
+
+    public String getCityDescription(String cityName) {
+        return root.path(CITY_NODE).path(cityName).path(DESCRIPTION_NODE).asText();
     }
 
     public String getCityMission(String missionType, String cityName) {
