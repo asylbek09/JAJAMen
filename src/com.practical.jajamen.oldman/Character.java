@@ -3,10 +3,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Character {
-    protected String name;
-    protected int health;
-    protected Map<String, Integer> power;
-    protected int steroid;
+    private String name;
+    private int health;
+    private Map<String, Integer> power;
+    private int steroid;
 
     Character() {
     }

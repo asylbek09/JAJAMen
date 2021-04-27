@@ -7,11 +7,12 @@ import java.util.Scanner;
 public class InputParser {
     static String SPACE_DELIMITER = " ";
     static String CHAR_DELIMITER = "";
-    static int TIME_BETWEEN_CHAR = 50;
+    static int TIME_BETWEEN_CHAR = 0;
 
     private Scanner scanner;
     private DataParser dataParser;
-    private List<String> currentInput;
+    private String verb;
+    private String subject;
 
     InputParser() {
         scanner = new Scanner(System.in);
@@ -33,23 +34,50 @@ public class InputParser {
     }
 
     // will display whatever you pass it and grab the users next input
-    public void grabNextInput(String displayText) {
-        // can be tested from console (GameClient)
-        displayTextStream(displayText);
+    public void grabNextInput() {
+        System.out.println("\nWhat will your next action be?" + "THIS IS WHERE YOUR OPTIONS WILL SHOW UP");
+        // will grab the user's response
         String result = scanner.nextLine();
-        setCurrentInput(splitInput(result));
+        // will split the user's response - "go el paso" -> "go" "el paso"
+        splitInput(result);
     }
 
-    public List<String> getCurrentInput() {
-        return this.currentInput;
+    // will display whatever you pass it and grab the users next input
+    public void showTextAndGrabNextInput(String displayText) {
+        // will display the text that was passed in
+        displayTextStream(displayText);
+        // will grab the user's response
+        String result = scanner.nextLine();
+        // will split the user's response - "go el paso" -> "go" "el paso"
+        splitInput(result);
     }
 
-    public void setCurrentInput(List<String> input) {
-        this.currentInput = input;
+    public String getVerb() {
+        return verb;
+    }
+    public void setVerb(String verb) {
+        this.verb = verb;
     }
 
-    private List<String> splitInput(String input) {
-        return Arrays.asList(input.split(SPACE_DELIMITER));
+    public String getSubject() {
+        return subject;
+    }
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    private void splitInput(String input) {
+        // will split the user's response from the first word of the response
+        // verbs are, effectively, only allowed to be one word
+        List<String> splitResponse = Arrays.asList(input.split(SPACE_DELIMITER, 2));
+        // will check to see if the user typed at least one word in
+        if (!splitResponse.get(0).isEmpty())
+            setVerb(splitResponse.get(0));
+            System.out.println("\nVERB: " + getVerb());
+        // will check to see if the user typed several words in
+        if (splitResponse.size() > 1)
+            setSubject(splitResponse.get(1));
+            System.out.println("SUBJECT: " + getSubject() + "\n");
     }
 
     // will check the player's input for a movement based verb
@@ -74,7 +102,7 @@ public class InputParser {
     public boolean isAllowedCombatVerb(String input) {
         List<String> allowedCombatVerbs = Arrays.asList(
                 // fill with verbs based on acquiring
-                "fight", "engage", "whoop", "open a can", "combat", "beat", "beat up", "beat em up"
+                "fight", "engage", "whoop", "open a can", "combat", "beat"
         );
         return allowedCombatVerbs.contains(input);
     }
@@ -84,5 +112,22 @@ public class InputParser {
         // should return all the things the player can interact with
         List<String> allowedSubjects = dataParser.getCityValues(city);
         return allowedSubjects.contains(input);
+    }
+
+    public boolean isAllowedStatusVerb(String input) {
+        List<String> allowedStatusVerbs = Arrays.asList(
+                // fill with verbs based on acquiring
+                "show", "view"
+        );
+        return allowedStatusVerbs.contains(input);
+    }
+
+    // will check the player's input for quitting verbs
+    public boolean isAllowedQuitVerb(String input) {
+        List<String> allowedQuitVerbs = Arrays.asList(
+                // fill with verbs based on leaving the app
+                "quit", "exit", "leave"
+        );
+        return allowedQuitVerbs.contains(input);
     }
 }

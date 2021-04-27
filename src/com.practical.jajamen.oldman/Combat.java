@@ -11,13 +11,13 @@ public class Combat {
         int villain_health = villain.getHealth();
         System.out.println("You just encountered: " + villain.getName() + "\n");
         System.out.println("Battle with " + villain.getName() + " starts\n");
-        System.out.println("Your stats for health: " + hero_health + " , power and damage: " + hero.getPower() + " / "
-                + hero.getPowerLimit() + villain.getName() + "s health: " + villain_health + " , power and damage: "
-                + villain.getPower() + " / " + villain.getPowerLimit());
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        while (hero_health != 0 && villain_health != 0) {
+        while (hero_health > 0 || villain_health > 0) {
             System.out.print("Enter (p) to use your power or heal (h)? ");
             String action = in.readLine();
+            System.out.println(
+                    "Your stats for health: " + hero_health + " , power and damage: " + hero.getPower() + " | " + hero.getPowerLimit() + " | " +
+                    villain.getName() + "'s health: " + villain_health + " , power and damage: " + villain.getPower() + " | " + villain.getPowerLimit());
             if (action.equals("h")) {
                 hero.setHealth(hero.getSteroid());
             } else {
