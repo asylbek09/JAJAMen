@@ -33,7 +33,10 @@ public class InputParserTest {
 
     @Test
     public void isAllowedSubject() {
+        assertTrue(ip.isAllowedSubject("North Mexico", "North Dakota"));
+        assertTrue(ip.isAllowedSubject("North Mexico", "Save Caliban"));
         assertTrue(ip.isAllowedSubject("North Mexico", "steroid"));
+        assertTrue(ip.isAllowedSubject("North Mexico", "Pierce"));
         assertFalse(ip.isAllowedSubject("North Mexico", "TEST-SUBJECT"));
     }
 }
