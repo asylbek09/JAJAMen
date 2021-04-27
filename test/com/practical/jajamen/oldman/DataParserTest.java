@@ -92,20 +92,24 @@ public class DataParserTest {
     @Test
     public void getCityMission_mainMission() {
         assertEquals("North Dakota", dp.getCityMission("Main Mission", "North Mexico"));
+        assertNotEquals("TEST-MAIN-MISSION", dp.getCityMission("Side Mission", "North Mexico"));
     }
 
     @Test
     public void getCityMission_sideMission() {
         assertEquals("Save Caliban", dp.getCityMission("Side Mission", "North Mexico"));
+        assertNotEquals("TEST-SIDE-MISSION", dp.getCityMission("Side Mission", "North Mexico"));
     }
 
     @Test
     public void getCityItem_shouldReturnTrue() {
         assertEquals("steroid", dp.getCityItem("North Mexico"));
+        assertNotEquals("TEST-ITEM", dp.getCityItem("North Mexico"));
     }
 
     @Test
     public void getCityVillains_shouldReturnTrue() {
-        assertEquals(0, dp.getCityVillain("North Mexico"));
+        assertEquals("Pierce", dp.getCityVillain("North Mexico"));
+        assertNotEquals("TEST-VILLAIN", dp.getCityVillain("North Mexico"));
     }
 }
