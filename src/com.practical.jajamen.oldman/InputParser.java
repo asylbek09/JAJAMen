@@ -43,6 +43,7 @@ public class InputParser {
     public List<String> getCurrentInput() {
         return this.currentInput;
     }
+
     public void setCurrentInput(List<String> input) {
         this.currentInput = input;
     }
