@@ -62,17 +62,26 @@ public class InputParser {
 
     // will check the player's input for an acquiring based verb
     public boolean isAllowedAcquireVerb(String input) {
-        List<String> allowedVerbs = Arrays.asList(
+        List<String> allowedMovementVerbs = Arrays.asList(
                 // fill with verbs based on acquiring
                 "grab", "get", "acquire", "attain", "snatch", "pilfer"
         );
-        return allowedVerbs.contains(input);
+        return allowedMovementVerbs.contains(input);
+    }
+
+    // will check the player's input for combat
+    public boolean isAllowedCombatVerb(String input) {
+        List<String> allowedCombatVerbs = Arrays.asList(
+                // fill with verbs based on acquiring
+                "fight", "engage", "whoop", "open a can", "combat", "beat", "beat up", "beat em up"
+        );
+        return allowedCombatVerbs.contains(input);
     }
 
     // checks to see if the player can interact with a subject in their current city
     public boolean isAllowedSubject(String city, String input) {
         // should return all the things the player can interact with
-        List<String> allowedVerbs = dataParser.getCityValues(city);
-        return allowedVerbs.contains(input);
+        List<String> allowedSubjects = dataParser.getCityValues(city);
+        return allowedSubjects.contains(input);
     }
 }
