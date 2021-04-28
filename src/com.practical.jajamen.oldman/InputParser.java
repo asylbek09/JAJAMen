@@ -57,8 +57,6 @@ public class InputParser {
         }
     }
 
-    // TODO: Show user what actions they have available
-    // TODO: Give user examples of words they can use
     // will display whatever you pass it and grab the users next input
     public void grabNextInput() {
         displayTextStream("\nWhat will your next action be?");
