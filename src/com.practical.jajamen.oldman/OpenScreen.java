@@ -26,12 +26,7 @@ public class OpenScreen {
     public void introduction() {
 
         // TODO: Maybe feed this into the inputParser, can also be placed into the data.json and then pulled from there
-        String text =
-                "Hey, It’s your favorite antihero Deadpool here!\n" +
-                "You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\n" +
-                "God, I hate that guy.\n" +
-                "Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\n" +
-                "Logan also known as the dashingly good-looking, Wolverine.\n";
+        String text = "";
         //Code to have letter print one by one
         char[] charArr = text.toCharArray();
 
