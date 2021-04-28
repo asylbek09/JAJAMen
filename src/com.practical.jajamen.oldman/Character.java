@@ -8,7 +8,6 @@ public class Character {
     private Map<String, Integer> power;
     private int steroid;
 
-    // TODO: remove the following ctor - super() isn't needed - unless there is a need for a blank Character
     Character() {
     }
 

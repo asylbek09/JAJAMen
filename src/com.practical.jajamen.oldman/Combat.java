@@ -24,10 +24,8 @@ public class Combat {
                     "Your health: " + hero_health + " , power and damage: " + hero.getPower() + "\n" +
                             villain.getName() + "'s health: " + villain_health + " , power and damage: " + villain.getPower() + "\n");
             if (action.equals("h")) {
-                hero.setHealth(hero.getSteroid());
-            } else {
-                villain_health -= hero.getPowerLimit();
-                hero_health -= villain.getPowerLimit();
+                hero.setHealth(hero.getSteroid() + hero.getHealth());
+            } else if (action.equals("p")) {
                 if(hero_health < 0) {
                     System.out.println("Ups, GAME OVER, you were killed by " + villain.getName() + "!");
                     break;
@@ -36,6 +34,10 @@ public class Combat {
                     System.out.println("Congratulations! You just killed " + villain.getName());
                     break;
                 }
+                villain_health -= hero.getPowerLimit();
+                hero_health -= villain.getPowerLimit();
+            } else {
+                System.out.println("Enter (p) to use your power or heal (h)? ");
             }
         }
     }
