@@ -48,6 +48,15 @@ class Game {
         System.out.println("---------------------------------");
     }
 
+    // TODO: Should this method be in this class? Does it fit the theme of the class?
+    public void showInstructions() {
+        System.out.println("Commands:\n" +
+                "  go [location name]\n" +
+                "  get [steroid]\n" +
+                "  fight [villain name]\n" +
+                "  quit [to quit the game]");
+    }
+
     // TODO: Separate chunks of the logic into separate methods
     // TODO: DRY (Don't repeat yourself)
     public void gameLogic() {
@@ -182,4 +191,6 @@ class Game {
     public void setCurrentCity(String currentCity) {
         this.currentCity = currentCity;
     }
+
+
 }

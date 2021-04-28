@@ -46,15 +46,6 @@ public class OpenScreen {
         }
     }
 
-    // TODO: Should this method be in this class? Does it fit the theme of the class?
-    public void showInstructions() {
-        System.out.println("Commands:\n" +
-                "  go [location name]\n" +
-                "  get [steroid]\n" +
-                "  fight [villain name]\n" +
-                "  quit [to quit the game]");
-    }
-
     // TODO: Get creators to actually provide descriptions of themselves
     // TODO: print the sout using inputParser
     public void creatorDescription() {

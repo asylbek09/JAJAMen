@@ -32,15 +32,14 @@ class DataParser {
     static String ITEM_NODE = "item";
     static String VILLAIN_NODE = "villain";
     static String DESCRIPTION_NODE = "description";
-    static String HEALTH_NODE = "health";
+    static String HEALTH_NODE = "steroid";
     static String POWER_NODE = "power";
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
     //static String FILE_PATH = "data/%s.json";
-    //static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
     // TODO: Currently have to manually uncomment - Potentially, make this a toggle
-    static String FILE_PATH = "data/%s.json";
-    // static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
+    // static String FILE_PATH = "data/%s.json";
+    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
 
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
