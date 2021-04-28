@@ -28,7 +28,11 @@ public class Combat {
             String action = in.readLine();
 
             if (action.equals("h")) {
-                hero.setHealth(hero.getSteroid() + hero.getHealth());
+                if (hero.getSteroid() != 0) {
+                    hero.setHealth(hero.getSteroid() + hero.getHealth());
+                } else {
+                    ip.displayTextStream("You don't have any steroid to boost your health!\n");
+                }
             }
             if (action.equals("p")) {
                 villain_health -= hero.getPowerLimit();
