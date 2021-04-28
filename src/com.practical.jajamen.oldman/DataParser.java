@@ -32,8 +32,9 @@ class DataParser {
     static String ITEM_NODE = "item";
     static String VILLAIN_NODE = "villain";
     static String DESCRIPTION_NODE = "description";
-    static String HEALTH_NODE = "steroid";
+    static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
+    static String STEROID_NODE = "steroid";
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
     //static String FILE_PATH = "data/%s.json";
@@ -134,6 +135,10 @@ class DataParser {
 
     public int getCharacterHealth(String characterName) {
         return root.path(CHARACTER_NODE).path(characterName).path(HEALTH_NODE).asInt();
+    }
+
+    public int getSteroid() {
+        return root.path(STEROID_NODE).path(HEALTH_NODE).asInt();
     }
 
     // at the moment, it will grab multiple powers - if in the future we decide to add more
