@@ -88,7 +88,6 @@ public class InputParser {
             System.out.println("SUBJECT: " + getSubject() + "\n");
     }
 
-
     // TODO: Provide more words, allows the player more freedom
     // will check the player's input for a movement based verb
     public boolean isAllowedMovementVerb(String input) {

@@ -7,7 +7,6 @@ import java.util.InputMismatchException;
  * This is where the core of the project should be.
  * Game Client should only have to create an instance of this and then run start()
  */
-// TODO: Change the souts to instead print from the inputParser
 class Game {
     DataParser dataParser;
     InputParser inputParser;
@@ -38,14 +37,12 @@ class Game {
         }
     }
 
-    // TODO: DRY (Don't repeat yourself)
     public void showStatus() {
-        System.out.println("---------------------------------");
-        System.out.println("Your name is " + logan.getName());
-        System.out.println("You are in the " + currentCity);
-        System.out.println("Your health: " + logan.getHealth());
-        System.out.println("You own: " + logan.getSteroid() + " steroids");
-        System.out.println("---------------------------------");
+        String[] output = {"---------------------------------", "Your name is " + logan.getName(), "You are in the " + currentCity,
+                "Your health: " + logan.getHealth(), "You own: " + logan.getSteroid() + " steroids", "---------------------------------"};
+        for (int i = 0; i < output.length; i++) {
+            inputParser.displayTextStream(output[i] + "\n");
+        }
     }
 
     // TODO: Should this method be in this class? Does it fit the theme of the class?
@@ -75,46 +72,55 @@ class Game {
 
             // checks to see if the input verb is empty
             if (!inputParser.getVerb().isEmpty()) {
-                System.out.println("OUTER - VERB: Parsing logic route");
+                inputParser.displayTextStream("OUTER - VERB: Parsing logic route\n");
+                //System.out.println("OUTER - VERB: Parsing logic route");
                 String verb = inputParser.getVerb();
 
                 if (inputParser.isAllowedStatusVerb(verb)) {
                     // show status
-                    System.out.println("STATUS: You're in the status route");
+                    inputParser.displayTextStream("STATUS: You're in the status route\n");
+                    //System.out.println("STATUS: You're in the status route");
                     showStatus();
                 }
 
                 if (inputParser.isAllowedQuitVerb(verb)) {
-                    System.out.println("QUIT: You're in the quit route");
+                    inputParser.displayTextStream("QUIT: You're in the quit route\n");
+                    //System.out.println("QUIT: You're in the quit route");
                     System.exit(0);
                 }
 
                 // checks to see if the subject is empty
                 if (!inputParser.getSubject().isEmpty()) {
                     String subject = inputParser.getSubject();
-                    System.out.println("INNER - VERB, SUBJECT: Parsing logic route");
+                    inputParser.displayTextStream("INNER - VERB, SUBJECT: Parsing logic route\n");
+                    //System.out.println("INNER - VERB, SUBJECT: Parsing logic route");
 
                     // within this scope, you will only be able to interact with city targets
                     if (inputParser.isAllowedSubject(getCurrentCity(), subject)) {
 
                         if (inputParser.isAllowedMovementVerb(verb)) {
                             // changes the current city to the subject
-                            System.out.println("MISSION: You're in the mission route");
+                            inputParser.displayTextStream("MISSION: You're in the mission route\n");
+                            //System.out.println("MISSION: You're in the mission route");
                             setCurrentCity(subject);
                         }
 
                         if (inputParser.isAllowedAcquireVerb(verb)) {
                             // get steroid
-                            System.out.println("ITEM: You're in the item route");
+                            inputParser.displayTextStream("ITEM: You're in the item route\n");
+                            //System.out.println("ITEM: You're in the item route");
                             logan.setSteroid(logan.getSteroid() + 1);
-                            System.out.println("You now own: " + logan.getSteroid() + " steroids");
+                            inputParser.displayTextStream("You now own: " + logan.getSteroid() + " steroids");
+                            //System.out.println("You now own: " + logan.getSteroid() + " steroids");
                         }
 
                         if (inputParser.isAllowedCombatVerb(verb)) {
                             // fight subject
-                            System.out.println("COMBAT: You're in the combat route");
+                            inputParser.displayTextStream("COMBAT: You're in the combat route\n");
+                            //System.out.println("COMBAT: You're in the combat route");
                             try {
                                 // creates a fight between logan and the city villain
+                                showStatus();
                                 new Combat(logan, dataParser.createCharacter(dataParser.getCityVillain(getCurrentCity())));
                             } catch (IOException e) {
                                 e.printStackTrace();
