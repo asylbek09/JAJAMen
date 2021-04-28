@@ -1,5 +1,6 @@
 {
-  "intro": "In the near future, a weary Logan cares for an ailing Professor X at a remote outpost on the Mexican border. His plan to hide from the outside world gets upended when he meets a young mutant (Laura/X-23) who is very much like him. Logan must now protect the girl and battle the dark forces (The Reavers and X-24) that want to capture her.",
+  "intro": "Hey, It’s your favorite antihero Deadpool here!\n\" +\n \"You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\\n\" +\n \"God, I hate that guy.\\n\" +\n \"Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\\n\" +\n\"Logan also known as the dashingly good-looking, Wolverine.\\n\";",
+
   "city": {
     "El Paso": {
       "Main Mission": "Oklahoma City",
@@ -48,10 +49,9 @@
     },
     "Canadian Border": {
       "Main Mission": "River North",
-      "Side Mission": "XXXX",
       "item": "",
-      "villain": 0,
-      "description": ""
+      "villain": "X-24",
+      "description": "You're at the boarder with the young mutant escapees. You prepare to transport Laura and the group to Eden"
     },
     "Eden": {
       "Main Mission": "Survive and be Happy, Logan and X are dead",
