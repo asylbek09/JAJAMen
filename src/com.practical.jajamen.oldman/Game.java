@@ -7,6 +7,7 @@ import java.util.InputMismatchException;
  * This is where the core of the project should be.
  * Game Client should only have to create an instance of this and then run start()
  */
+// TODO: Change the souts to instead print from the inputParser
 class Game {
     DataParser dataParser;
     InputParser inputParser;
@@ -16,6 +17,7 @@ class Game {
 
     boolean quit = false;
     boolean introComplete = false;
+    // TODO: Establish a point in the game, or condition, where the player wins and finishes the game
     boolean gameFinished = false;
 
     Game() {
@@ -36,6 +38,7 @@ class Game {
         }
     }
 
+    // TODO: DRY (Don't repeat yourself)
     public void showStatus() {
         System.out.println("---------------------------------");
         System.out.println("Your name is " + logan.getName());
@@ -45,6 +48,8 @@ class Game {
         System.out.println("---------------------------------");
     }
 
+    // TODO: Separate chunks of the logic into separate methods
+    // TODO: DRY (Don't repeat yourself)
     public void gameLogic() {
         /*
          * !!!!!!!!!!!!!!!!!! HEY THERE !!!!!!!!!!!!!!!!!!

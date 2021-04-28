@@ -21,15 +21,11 @@ import java.util.concurrent.TimeUnit;
  * Adventure will be passed into this class in order to help visualize the game
  * Options for menu creation
  */
+// TODO: Develop a Terminal UI using lanterna, or just go with Swing
 class UserInterface {
-//    Adventure adventure = null;
 
     UserInterface() {
     }
-
-//    UserInterface(Adventure adventure) {
-//        this.adventure = adventure;
-//    }
 
     // creates a gap between components
     private EmptySpace space() {

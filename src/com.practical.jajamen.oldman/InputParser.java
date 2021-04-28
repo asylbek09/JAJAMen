@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class InputParser {
     static String SPACE_DELIMITER = " ";
     static String CHAR_DELIMITER = "";
+    // TODO: Find a setting that is pleasing
+    // TODO: Create a way for the user to be able to modify the speed during gameplay
+    // TODO: Create a "menu" for the user to be modify game settings (textSpeed, saveGame, etc...)
     static int TIME_BETWEEN_CHAR = 0;
 
     private Scanner scanner;
@@ -33,6 +36,9 @@ public class InputParser {
         }
     }
 
+    // TODO: Change the souts to instead print from the inputParser
+    // TODO: Show user what actions they have available
+    // TODO: Give user examples of words they can use
     // will display whatever you pass it and grab the users next input
     public void grabNextInput() {
         System.out.println("\nWhat will your next action be?" + "THIS IS WHERE YOUR OPTIONS WILL SHOW UP");
@@ -73,13 +79,17 @@ public class InputParser {
         // will check to see if the user typed at least one word in
         if (!splitResponse.get(0).isEmpty())
             setVerb(splitResponse.get(0));
+            // only used for troubleshooting, can be removed
             System.out.println("\nVERB: " + getVerb());
         // will check to see if the user typed several words in
         if (splitResponse.size() > 1)
             setSubject(splitResponse.get(1));
+            // only used for troubleshooting, can be removed
             System.out.println("SUBJECT: " + getSubject() + "\n");
     }
 
+
+    // TODO: Provide more words, allows the player more freedom
     // will check the player's input for a movement based verb
     public boolean isAllowedMovementVerb(String input) {
         List<String> allowedVerbs = Arrays.asList(
@@ -89,6 +99,7 @@ public class InputParser {
         return allowedVerbs.contains(input);
     }
 
+    // TODO: Provide more words, allows the player more freedom
     // will check the player's input for an acquiring based verb
     public boolean isAllowedAcquireVerb(String input) {
         List<String> allowedMovementVerbs = Arrays.asList(
@@ -98,6 +109,7 @@ public class InputParser {
         return allowedMovementVerbs.contains(input);
     }
 
+    // TODO: Provide more words, allows the player more freedom
     // will check the player's input for combat
     public boolean isAllowedCombatVerb(String input) {
         List<String> allowedCombatVerbs = Arrays.asList(
@@ -107,6 +119,7 @@ public class InputParser {
         return allowedCombatVerbs.contains(input);
     }
 
+    // TODO: Provide more words, allows the player more freedom
     // checks to see if the player can interact with a subject in their current city
     public boolean isAllowedSubject(String city, String input) {
         // should return all the things the player can interact with
@@ -114,6 +127,7 @@ public class InputParser {
         return allowedSubjects.contains(input);
     }
 
+    // TODO: Provide more words, allows the player more freedom
     public boolean isAllowedStatusVerb(String input) {
         List<String> allowedStatusVerbs = Arrays.asList(
                 // fill with verbs based on acquiring
@@ -122,11 +136,12 @@ public class InputParser {
         return allowedStatusVerbs.contains(input);
     }
 
+    // TODO: Provide more words, allows the player more freedom
     // will check the player's input for quitting verbs
     public boolean isAllowedQuitVerb(String input) {
         List<String> allowedQuitVerbs = Arrays.asList(
                 // fill with verbs based on leaving the app
-                "quit", "exit", "leave"
+                "quit", "exit", "leave", "q"
         );
         return allowedQuitVerbs.contains(input);
     }

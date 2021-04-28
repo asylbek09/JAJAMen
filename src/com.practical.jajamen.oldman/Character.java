@@ -8,6 +8,7 @@ public class Character {
     private Map<String, Integer> power;
     private int steroid;
 
+    // TODO: remove the following ctor - super() isn't needed - unless there is a need for a blank Character
     Character() {
     }
 
@@ -76,7 +77,6 @@ public class Character {
                 getPower().equals(character.getPower());
     }
 
-    // jeff: created hashcode in order to compare diff instances
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getPower());
