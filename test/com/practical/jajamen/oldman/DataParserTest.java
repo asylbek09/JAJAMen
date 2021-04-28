@@ -3,7 +3,6 @@ package com.practical.jajamen.oldman;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -21,10 +20,10 @@ public class DataParserTest {
     @Test
     public void getAllCities_shouldReturnTrue() {
         List<String> expected = Arrays.asList(
-            "El Paso", "Oklahoma City", "North Mexico", "North Dakota", "The Munson Family", "Canadian Border", "Eden"
+            "El Paso", "Oklahoma City", "Reaver's Lair", "North Mexico", "Save Caliban", "North Dakota", "The Munson Family", "Canadian Border", "Eden"
         );
 
-        assertEquals(7, dp.getAllCities().size());
+        assertEquals(9, dp.getAllCities().size());
         assertEquals(expected, dp.getAllCities());
     }
 
@@ -38,10 +37,10 @@ public class DataParserTest {
 
     @Test
     public void getCityValues_shouldReturnTrue() {
-        List<String> expected = Arrays.asList("River North", "helmet", "0");
+        List<String> expected = Arrays.asList("North Dakota", "Save Caliban", "steroid", "Pierce", "After you failed to rescue Gabriela on time, you quickly drive back to the old factory. \nnPierce, after mutants, arrives there, looking for the Laura and Charles...After Laura hits Pierece, Caliban gets captured by the meavers...Then they attack the factory. \nYou put Charles in the lemo and better try to escape...\nLaura however still is in the factory...\nDo you want to rescue Laura?");
 
-        assertEquals(3, dp.getCityValues("Old Town").size());
-        assertEquals(expected, dp.getCityValues("Old Town"));
+        assertEquals(5, dp.getCityValues("North Mexico").size());
+        assertEquals(expected, dp.getCityValues("North Mexico"));
     }
 
     @Test
@@ -63,10 +62,10 @@ public class DataParserTest {
     @Test
     public void getAllCharacters_shouldReturnTrue() {
         List<String> expected = Arrays.asList("Magneto", "Apocalypse", "Mystique", "Sabretooth",
-                "Juggernaut", "Professor X", "Beast", "Wolverine", "Cyclops", "Phoenix"
+                "Juggernaut", "Professor X", "Beast", "Wolverine", "X-24", "Phoenix", "Reavers", "Pierce", "Dr Rice"
         );
 
-        assertEquals(10, expected.size());
+        assertEquals(13, expected.size());
         assertEquals(expected, dp.getAllCharacters());
     }
 
@@ -90,18 +89,26 @@ public class DataParserTest {
     }
 
     @Test
-    public void getCityDirections_shouldReturnTrue() {
-        List<String> expected = Arrays.asList("south");
-        assertEquals(expected, dp.getCityDirections("Old Town"));
+    public void getCityMission_mainMission() {
+        assertEquals("North Dakota", dp.getCityMission("Main Mission", "North Mexico"));
+        assertNotEquals("TEST-MAIN-MISSION", dp.getCityMission("Side Mission", "North Mexico"));
+    }
+
+    @Test
+    public void getCityMission_sideMission() {
+        assertEquals("Save Caliban", dp.getCityMission("Side Mission", "North Mexico"));
+        assertNotEquals("TEST-SIDE-MISSION", dp.getCityMission("Side Mission", "North Mexico"));
     }
 
     @Test
     public void getCityItem_shouldReturnTrue() {
-        assertEquals("helmet", dp.getCityItem("Old Town"));
+        assertEquals("steroid", dp.getCityItem("North Mexico"));
+        assertNotEquals("TEST-ITEM", dp.getCityItem("North Mexico"));
     }
 
     @Test
     public void getCityVillains_shouldReturnTrue() {
-        assertEquals(0, dp.getCityVillain("Old Town"));
+        assertEquals("Pierce", dp.getCityVillain("North Mexico"));
+        assertNotEquals("TEST-VILLAIN", dp.getCityVillain("North Mexico"));
     }
 }

@@ -3,11 +3,12 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Character {
-    protected String name;
-    protected int health;
-    protected Map<String, Integer> power;
-    protected int steroid;
+    private String name;
+    private int health;
+    private Map<String, Integer> power;
+    private int steroid;
 
+    // TODO: remove the following ctor - super() isn't needed - unless there is a need for a blank Character
     Character() {
     }
 
@@ -67,7 +68,6 @@ public class Character {
                 '}';
     }
 
-    // jeff: created equals in order to compare diff instances
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,7 +77,6 @@ public class Character {
                 getPower().equals(character.getPower());
     }
 
-    // jeff: created hashcode in order to compare diff instances
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getPower());
