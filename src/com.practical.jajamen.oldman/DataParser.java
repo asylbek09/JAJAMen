@@ -34,7 +34,6 @@ class DataParser {
     static String DESCRIPTION_NODE = "description";
     static String HEALTH_NODE = "steroid";
     static String POWER_NODE = "power";
-    InputParser inputParser;
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
     //static String FILE_PATH = "data/%s.json";
@@ -62,20 +61,26 @@ class DataParser {
         }
     }
 
-    // TODO: DRY (Don't repeat yourself)
     public void printArea(String cityName) {
         List<String> areaInformation = getCityKeys(cityName);
         for (String property : areaInformation) {
-            if (property.equals("Main Mission"))
-                inputParser.displayTextStream("\nYou can travel to:\t" + getCityMission(property, cityName));
-            if (property.equals("Side Mission"))
-                inputParser.displayTextStream("You can travel to:\t" + getCityMission(property, cityName));
-            if (property.equals("item"))
-                inputParser.displayTextStream("You can acquire:\t" + getCityItem(cityName));
-            if (property.equals("villain"))
-                inputParser.displayTextStream("You can fight:\t" + getCityVillain(cityName) + "\n");
-            if (property.equals("description"))
-                inputParser.displayTextStream("Description:\t" + getCityDescription(cityName) + "\n");
+            switch (property) {
+                case ("Main Mission"):
+                    System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName));
+                    break;
+                case ("Side Mission"):
+                    System.out.println("You can travel to:\t" + getCityMission(property, cityName));
+                    break;
+                case ("item"):
+                    System.out.println("You can acquire:\t" + getCityItem(cityName));
+                    break;
+                case ("villain"):
+                    System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n");
+                    break;
+                case ("description"):
+                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n");
+                    break;
+            }
         }
     }
 

@@ -113,7 +113,7 @@ public class InputParser {
         if (splitResponse.size() > 1)
             setSubject(splitResponse.get(1));
             // only used for troubleshooting, can be removed
-            displayTextStream("SUBJECT: " + getSubject() + "\n");
+            displayTextStream("\nSUBJECT: " + getSubject() + "\n");
     }
 
     // will check the player's input for a movement based verb
