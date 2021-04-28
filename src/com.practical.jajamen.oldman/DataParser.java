@@ -6,23 +6,25 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * cities:
- *      grab all cities
- *      grab the information of one city
- *      grab the directions available for one city
- *      grab the item available for one city
- *      grab the number of villains for one city
+ * grab all cities
+ * grab the information of one city
+ * grab the directions available for one city
+ * grab the item available for one city
+ * grab the number of villains for one city
  * mutants:
- *      create and return an instance of a mutant
- *      check to see if a mutant exists
- *      grab all the mutant names
- *      grab the information of one mutant
- *      grab a mutant's health value
- *      grab a mutant's powers
- *      grab the damage value of a mutant's specific power
+ * create and return an instance of a mutant
+ * check to see if a mutant exists
+ * grab all the mutant names
+ * grab the information of one mutant
+ * grab a mutant's health value
+ * grab a mutant's powers
+ * grab the damage value of a mutant's specific power
  */
 // TODO: Refactor code, several opportunities for DRY (Don't repeat yourself)
 class DataParser {
@@ -41,10 +43,9 @@ class DataParser {
     // TODO: Currently have to manually uncomment - Potentially, make this a toggle
     // static String FILE_PATH = "data/%s.json";
     static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
-
+    ObjectMapper mapper;
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
-    ObjectMapper mapper;
 
     DataParser(String fileName) {
         try {
@@ -57,7 +58,7 @@ class DataParser {
             mapper = new ObjectMapper();
             // create the JSON starting point
             root = mapper.readTree(gameData);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -67,20 +68,14 @@ class DataParser {
         for (String property : areaInformation) {
             switch (property) {
                 case ("Main Mission"):
-                    System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName));
-                    break;
                 case ("Side Mission"):
-                    System.out.println("You can travel to:\t" + getCityMission(property, cityName));
-                    break;
+                    System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName)); break;
                 case ("item"):
-                    System.out.println("You can acquire:\t" + getCityItem(cityName));
-                    break;
+                    System.out.println("You can acquire:\t" + getCityItem(cityName)); break;
                 case ("villain"):
-                    System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n");
-                    break;
+                    System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n"); break;
                 case ("description"):
-                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n");
-                    break;
+                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n"); break;
             }
         }
     }
@@ -91,7 +86,7 @@ class DataParser {
 
     // TODO: Can this method be done in a better way?
     public String getCityMission(String missionType, String cityName) {
-        List<String> allowedMissionTypes =  Arrays.asList("Main Mission", "Side Mission");
+        List<String> allowedMissionTypes = Arrays.asList("Main Mission", "Side Mission");
         if (!allowedMissionTypes.contains(missionType)) {
             throw new IllegalArgumentException("Mission Type is not valid. Please input Main Mission OR Side Mission");
         }
@@ -169,7 +164,7 @@ class DataParser {
             JsonNode characterInformation = root.path(CHARACTER_NODE).path(characterName);
             // allows you to pass in a JsonNode and it returns a Java Object of your choosing (as long as it has the proper fields)
             result = mapper.treeToValue(characterInformation, Character.class);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return result;
