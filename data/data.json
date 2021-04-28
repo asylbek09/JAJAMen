@@ -153,6 +153,7 @@
       }
     }
   },
-  "steroid": 5
+  "steroid": {
+    "health" : 5
+  }
 }
-
