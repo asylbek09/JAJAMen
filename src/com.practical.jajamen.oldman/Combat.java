@@ -21,13 +21,21 @@ public class Combat {
             System.out.print("Enter (p) to use your power or heal (h)? ");
             String action = in.readLine();
             System.out.println(
-                    "Your stats for health: " + hero_health + " , power and damage: " + hero.getPower() + " | " + hero.getPowerLimit() + " | " +
-                    villain.getName() + "'s health: " + villain_health + " , power and damage: " + villain.getPower() + " | " + villain.getPowerLimit());
+                    "Your health: " + hero_health + " , power and damage: " + hero.getPower() + "\n" +
+                            villain.getName() + "'s health: " + villain_health + " , power and damage: " + villain.getPower() + "\n");
             if (action.equals("h")) {
                 hero.setHealth(hero.getSteroid());
             } else {
                 villain_health -= hero.getPowerLimit();
                 hero_health -= villain.getPowerLimit();
+                if(hero_health < 0) {
+                    System.out.println("Ups, GAME OVER, you were killed by " + villain.getName() + "!");
+                    break;
+                }
+                if(villain_health < 0){
+                    System.out.println("Congratulations! You just killed " + villain.getName());
+                    break;
+                }
             }
         }
     }
