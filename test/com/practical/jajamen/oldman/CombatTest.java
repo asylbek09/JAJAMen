@@ -15,6 +15,8 @@ public class CombatTest {
     private Character hero = new Character("Jack", 40, power, 2);
     private Character villain = new Character("Bad Guy", 30, power, 0);
     private Combat combat;
+    private String cityName;
+    private DataParser dp = new DataParser("data");
 
 //    @Before
 //    public void setUp() throws IOException {
@@ -29,7 +31,7 @@ public class CombatTest {
 
     @Test
     public void testEndValues() throws IOException {
-        combat = new Combat(hero, villain);
+        combat = new Combat(hero, villain, cityName, dp);
         assertEquals(hero.getHealth(), 40);
         assertEquals(villain.getHealth(), 30);
     }

@@ -1,5 +1,6 @@
 package com.practical.jajamen.oldman;
 
+import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,11 +10,9 @@ public class Combat {
     // TODO: Refactor in to several methods
     // TODO: Catch and handle the error that is being thrown
     InputParser ip;
-    DataParser dp;
 
-    public Combat(Character hero, Character villain) throws IOException {
+    public Combat(Character hero, Character villain, String cityName, DataParser dp) throws IOException {
         ip = new InputParser();
-        dp = new DataParser("data");
 
         int hero_health = hero.getHealth();;
         int villain_health = villain.getHealth();
@@ -43,6 +42,7 @@ public class Combat {
                 if(villain.getHealth() <= 0){
                     ip.displayTextStream("\n***Congratulations! You just killed " + villain.getName() + "!***\n");
                     hero.setHealth(dp.getCharacterHealth("Wolverine"));
+                    dp.removeVillain(cityName);
                     break;
                 }
                 hero.setHealth(hero.getHealth() - villain.getPowerLimit());

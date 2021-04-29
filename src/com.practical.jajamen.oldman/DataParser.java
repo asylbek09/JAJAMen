@@ -1,7 +1,11 @@
 package com.practical.jajamen.oldman;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import  com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -100,6 +104,10 @@ class DataParser {
     // currently set to return an int - just like the json file
     public String getCityVillain(String cityName) {
         return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asText();
+    }
+
+    public void removeVillain(String cityName) {
+        ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");;
     }
 
     // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?

@@ -144,7 +144,7 @@ class Game {
                     try {
                         // creates a fight between logan and the city villain
                         showStatus();
-                        new Combat(logan, dataParser.createCharacter(dataParser.getCityVillain(getCurrentCity())));
+                        new Combat(logan, dataParser.createCharacter(dataParser.getCityVillain(getCurrentCity())), getCurrentCity(), dataParser);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
