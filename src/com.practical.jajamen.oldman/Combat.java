@@ -31,7 +31,6 @@ public class Combat {
 
             if (action.equals("h")) {
                 if (hero.getSteroid() != 0) {
-                    //System.out.println("****steroid: " + hero.getSteroid() + "health: " + hero.getHealth() + "****\n");
                     int health_steroid = dp.getSteroid() + hero.getHealth();
                     hero.setHealth(health_steroid);
                     hero.setSteroid(hero.getSteroid() - 1);
@@ -42,13 +41,13 @@ public class Combat {
             if (action.equals("p")) {
                 villain.setHealth(villain.getHealth() - hero.getPowerLimit());
                 if(villain.getHealth() <= 0){
-                    ip.displayTextStream("Congratulations! You just killed " + villain.getName() + "!\n");
+                    ip.displayTextStream("\n***Congratulations! You just killed " + villain.getName() + "!***\n");
                     hero.setHealth(dp.getCharacterHealth("Wolverine"));
                     break;
                 }
                 hero.setHealth(hero.getHealth() - villain.getPowerLimit());
                 if(hero.getHealth() <= 0) {
-                    ip.displayTextStream("Ups, GAME OVER, you were killed by " + villain.getName() + "!\n");
+                    ip.displayTextStream("\n***Ups, GAME OVER, you were killed by " + villain.getName() + "!***\n");
                     System.exit(0);
                 }
             } else {
