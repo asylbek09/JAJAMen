@@ -38,7 +38,7 @@ class Game {
     }
 
     public void showStatus() {
-        String[] output = {"---------------------------------", "Your name is " + logan.getName(), "You are in the " + currentCity,
+        String[] output = {"---------------------------------", "Your are " + logan.getName(), "You are in the " + currentCity,
                 "Your health: " + logan.getHealth(), "You own: " + logan.getSteroid() + " steroids", "---------------------------------"};
         for (int i = 0; i < output.length; i++) {
             inputParser.displayTextStream(output[i] + "\n");

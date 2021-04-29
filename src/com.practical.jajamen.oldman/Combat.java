@@ -6,38 +6,53 @@ import java.io.InputStreamReader;
 
 public class Combat {
 
-    // TODO: End the fight when one Character has no more health
-    // TODO: Declare a winner, the user won't know who won otherwise
     // TODO: Refactor in to several methods
     // TODO: Catch and handle the error that is being thrown
-    // TODO: Change the souts to instead print from the inputParser
+    InputParser ip;
+    DataParser dp;
+
     public Combat(Character hero, Character villain) throws IOException {
-        int hero_health = hero.getHealth();
+        ip = new InputParser();
+        dp = new DataParser("data");
+
+        int hero_health = hero.getHealth();;
         int villain_health = villain.getHealth();
-        System.out.println("You just encountered: " + villain.getName() + "\n");
-        System.out.println("Battle with " + villain.getName() + " starts\n");
+        ip.displayTextStream("You just encountered: " + villain.getName() + "\n");
+        ip.displayTextStream("Battle with " + villain.getName() + " starts\n");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
         while (hero_health > 0 || villain_health > 0) {
-            System.out.print("Enter (p) to use your power or heal (h)? ");
-            String action = in.readLine();
-            System.out.println(
-                    "Your health: " + hero_health + " , power and damage: " + hero.getPower() + "\n" +
+            hero_health  = hero.getHealth();
+            villain_health = villain.getHealth();
+            ip.displayTextStream("Your health: " + hero_health + " , power and damage: " + hero.getPower() + "\n" +
                             villain.getName() + "'s health: " + villain_health + " , power and damage: " + villain.getPower() + "\n");
+            ip.displayTextStream("Enter (p) to use your power or heal (h)? ");
+            String action = in.readLine();
+
             if (action.equals("h")) {
-                hero.setHealth(hero.getSteroid() + hero.getHealth());
-            } else if (action.equals("p")) {
-                if(hero_health < 0) {
-                    System.out.println("Ups, GAME OVER, you were killed by " + villain.getName() + "!");
+                if (hero.getSteroid() != 0) {
+                    //System.out.println("****steroid: " + hero.getSteroid() + "health: " + hero.getHealth() + "****\n");
+                    int health_steroid = dp.getSteroid() + hero.getHealth();
+                    hero.setHealth(health_steroid);
+                    hero.setSteroid(hero.getSteroid() - 1);
+                } else {
+                    ip.displayTextStream("You don't have any steroid to boost your health!\n");
+                }
+            }
+            if (action.equals("p")) {
+                villain.setHealth(villain.getHealth() - hero.getPowerLimit());
+                if(villain.getHealth() <= 0){
+                    ip.displayTextStream("Congratulations! You just killed " + villain.getName() + "!\n");
+                    hero.setHealth(dp.getCharacterHealth("Wolverine"));
                     break;
                 }
-                if(villain_health < 0){
-                    System.out.println("Congratulations! You just killed " + villain.getName());
-                    break;
+                hero.setHealth(hero.getHealth() - villain.getPowerLimit());
+                if(hero.getHealth() <= 0) {
+                    ip.displayTextStream("Ups, GAME OVER, you were killed by " + villain.getName() + "!\n");
+                    System.exit(0);
                 }
-                villain_health -= hero.getPowerLimit();
-                hero_health -= villain.getPowerLimit();
             } else {
-                System.out.println("Enter (p) to use your power or heal (h)? ");
+                ip.displayTextStream("Enter (p) to use your power or heal (h)? ");
             }
         }
     }
