@@ -27,6 +27,7 @@ import java.util.*;
 // TODO: Refactor code, several opportunities for DRY (Don't repeat yourself)
 class DataParser {
     // the key values to target objects within the game data JSON file
+    static String INTRO_NODE = "intro";
     static String CITY_NODE = "city";
     static String CHARACTER_NODE = "mutants";
     static String ITEM_NODE = "item";

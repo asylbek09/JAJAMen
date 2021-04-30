@@ -1,5 +1,8 @@
 {
   "intro": "Hey, It’s your favorite antihero Deadpool here!\n\" +\n \"You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\\n\" +\n \"God, I hate that guy.\\n\" +\n \"Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\\n\" +\n\"Logan also known as the dashingly good-looking, Wolverine.\\n\";",
+  "printInstructions": "\"\\n Type one of the following \");\n \"\\t play - Start the game!\");\n \"\\t read - Learn how awesome the creators are!\");\n \"\\t quit - Quit and miss out on greatness\");",
+
+  "Current City": "",
 
   "city": {
     "El Paso": {

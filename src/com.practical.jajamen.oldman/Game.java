@@ -1,6 +1,8 @@
 package com.practical.jajamen.oldman;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 
 /*
@@ -8,8 +10,9 @@ import java.util.InputMismatchException;
  * Game Client should only have to create an instance of this and then run start()
  */
 // TODO: Change the souts to instead print from the inputParser
-class Game {
-    DataParser dataParser;
+class Game implements java.io.Serializable{
+
+    //DataParser dataParser;
     InputParser inputParser;
     Character logan;
     OpenScreen openScreen;
@@ -22,10 +25,11 @@ class Game {
 
     Game() {
         // insert the name of the JSON file that will be read
-        dataParser = new DataParser("data");
+        //dataParser = new DataParser("data");
         inputParser = new InputParser();
         // the following method allows you to create a character object using the game data
-        logan = dataParser.createCharacter("Wolverine");
+        //logan = dataParser.createCharacter("Wolverine");
+        logan = inputParser.getParser().createCharacter("Wolverine");
         currentCity = "El Paso";
         openScreen = new OpenScreen();
     }
@@ -33,7 +37,8 @@ class Game {
     public void askPlayer() {
         // will continue to ask the user what they want to do until they pass a valid response
         while (inputParser.getVerb().isEmpty()) {
-            dataParser.printArea(getCurrentCity());
+            //Added
+            inputParser.getParser().printArea(getCurrentCity());
             inputParser.grabNextInput();
         }
     }
@@ -115,7 +120,8 @@ class Game {
                             System.out.println("COMBAT: You're in the combat route");
                             try {
                                 // creates a fight between logan and the city villain
-                                new Combat(logan, dataParser.createCharacter(dataParser.getCityVillain(getCurrentCity())));
+                                //Added
+                                new Combat(logan, inputParser.getParser().createCharacter(inputParser.getParser().getCityVillain(getCurrentCity())));
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -145,6 +151,10 @@ class Game {
                             // gameLogic is where the core of the game is located
                             gameLogic();
                             break;
+                        case("save"):
+                           openScreen.saveGame();
+                        case("load"):
+                           openScreen.loadGame();
                         case ("read"):
                             openScreen.creatorDescription();
                             break;

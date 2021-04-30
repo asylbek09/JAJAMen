@@ -1,10 +1,16 @@
 package com.practical.jajamen.oldman;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 public class OpenScreen {
+    static Game game;
 
     public void introScreen() {
         System.out.println
-                (" ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
+                ("        ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
                         "██╔═══████║    ██╔══██╗    ████╗ ██████╔══██████╗  ██║      ████╗  ████╔════██║    ██║    ╚══██╔══██╔══██████╔════██║ ██╔██╔════╝\n" +
                         "██║   ████║    ██║  ██║    ██╔████╔███████████╔██╗ ██║      ██╔██╗ ███████╗ ██║ █╗ ██║       ██║  ██████╔████║    █████╔╝███████╗\n" +
                         "██║   ████║    ██║  ██║    ██║╚██╔╝████╔══████║╚██╗██║      ██║╚██╗████╔══╝ ██║███╗██║       ██║  ██╔══██████║    ██╔═██╗╚════██║\n" +
@@ -24,7 +30,6 @@ public class OpenScreen {
     // TODO: Refactor into several different methods
     //Game starts when user pressed #1 and the intro to the game will begin
     public void introduction() {
-
         // TODO: Maybe feed this into the inputParser, can also be placed into the data.json and then pulled from there
         String text = "";
         //Code to have letter print one by one
@@ -46,4 +51,30 @@ public class OpenScreen {
     public void creatorDescription() {
         System.out.println("These creators are the best!!!");
     }
+
+    public static void saveGame() {
+        try {
+            FileOutputStream fileOutputForSave = new FileOutputStream("saveFile.txt");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputForSave);
+            objectOutputStream.writeObject(game);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+            System.out.println("Game saved\n");
+        } catch (Exception e) {
+            System.out.println("Can't save game!");
+        }
+    }
+
+    public static void loadGame() {
+        try {
+            FileInputStream fileInputForLoad = new FileInputStream("saveFile.txt");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputForLoad);
+            game = (Game) objectInputStream.readObject();
+            objectInputStream.close();
+            System.out.println("-----game loaded------");
+        } catch (Exception e) {
+            System.out.println("Game can't be loaded");
+        }
+    }
+
 }

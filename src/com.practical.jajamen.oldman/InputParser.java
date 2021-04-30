@@ -21,6 +21,10 @@ public class InputParser {
         scanner = new Scanner(System.in);
         dataParser = new DataParser("data");
     }
+    //Added
+    public DataParser getParser() {
+        return dataParser;
+    }
 
     // credit to Jasmine for the following method
     // will print out text slowly
@@ -35,6 +39,7 @@ public class InputParser {
             }
         }
     }
+
 
     // TODO: Change the souts to instead print from the inputParser
     // TODO: Show user what actions they have available
