@@ -27,7 +27,7 @@ public class InputParser {
     }
 
     // credit to Jasmine for the following method
-    // will print out text slowly
+    // will print out text slowly...
     public void displayTextStream(String displayText) {
         String[] letters = displayText.split(CHAR_DELIMITER);
         for (String letter : letters) {
