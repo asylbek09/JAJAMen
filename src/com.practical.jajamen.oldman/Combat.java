@@ -7,12 +7,11 @@ import java.io.InputStreamReader;
 
 public class Combat {
 
-    InputParser ip;
 
     public Combat(Character hero, Character villain, String cityName, DataParser dp) throws IOException {
         ip = new InputParser();
 
-        int hero_health = hero.getHealth();;
+        int hero_health = hero.getHealth();
         int villain_health = villain.getHealth();
         ip.displayTextStream("You just encountered: " + villain.getName() + "\n");
         ip.displayTextStream("Battle with " + villain.getName() + " starts\n");

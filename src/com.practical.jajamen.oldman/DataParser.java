@@ -8,13 +8,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/*
  * cities:
  * grab all cities
  * grab the information of one city
@@ -42,21 +43,15 @@ class DataParser {
     static String STEROID_NODE = "steroid";
     static String INTRO_NODE = "intro";
 
-    // the assumed file directory ("./" is not required, the following path is considered relative)
-    //static String FILE_PATH = "data/%s.json";
-    // static String FILE_PATH = "data/%s.json";
-    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
-    ObjectMapper mapper;
+    private ObjectMapper mapper;
+  
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
 
-    DataParser(String fileName) {
+    DataParser() {
         try {
             // grabs the game dataParser file
-            byte[] gameData = Files.readAllBytes(
-                    // combines the fileName with the assumed filePath "./data/fileName.json"
-                    Paths.get(String.format(FILE_PATH, fileName))
-            );
+            InputStream gameData = getClass().getResourceAsStream("/data.json");
             // create a mapper to read through the game data
             mapper = new ObjectMapper();
             // create the JSON starting point
@@ -105,7 +100,7 @@ class DataParser {
     }
 
     public void removeVillain(String cityName) {
-        ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");;
+        ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");
     }
 
     protected List<String> getCityKeys(String cityName) {
