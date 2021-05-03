@@ -1,29 +1,35 @@
 package com.practical.jajamen.oldman;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import  com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/**
+/*
  * cities:
- *      grab all cities
- *      grab the information of one city
- *      grab the directions available for one city
- *      grab the item available for one city
- *      grab the number of villains for one city
+ * grab all cities
+ * grab the information of one city
+ * grab the directions available for one city
+ * grab the item available for one city
+ * grab the number of villains for one city
  * mutants:
- *      create and return an instance of a mutant
- *      check to see if a mutant exists
- *      grab all the mutant names
- *      grab the information of one mutant
- *      grab a mutant's health value
- *      grab a mutant's powers
- *      grab the damage value of a mutant's specific power
+ * create and return an instance of a mutant
+ * check to see if a mutant exists
+ * grab all the mutant names
+ * grab the information of one mutant
+ * grab a mutant's health value
+ * grab a mutant's powers
+ * grab the damage value of a mutant's specific power
  */
 class DataParser {
     // the key values to target objects within the game data JSON file
@@ -32,11 +38,13 @@ class DataParser {
     static String ITEM_NODE = "item";
     static String VILLAIN_NODE = "villain";
     static String DESCRIPTION_NODE = "description";
-    static String HEALTH_NODE = "steroid";
+    static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
+    static String STEROID_NODE = "steroid";
+    static String INTRO_NODE = "intro";
 
     private ObjectMapper mapper;
-
+  
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
 
@@ -48,7 +56,7 @@ class DataParser {
             mapper = new ObjectMapper();
             // create the JSON starting point
             root = mapper.readTree(gameData);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -58,20 +66,14 @@ class DataParser {
         for (String property : areaInformation) {
             switch (property) {
                 case ("Main Mission"):
-                    System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName));
-                    break;
                 case ("Side Mission"):
-                    System.out.println("You can travel to:\t" + getCityMission(property, cityName));
-                    break;
+                    System.out.println("\nYou can travel to:\t" + getCityMission(property, cityName)); break;
                 case ("item"):
-                    System.out.println("You can acquire:\t" + getCityItem(cityName));
-                    break;
+                    System.out.println("You can acquire:\t" + getCityItem(cityName)); break;
                 case ("villain"):
-                    System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n");
-                    break;
+                    System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n"); break;
                 case ("description"):
-                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n");
-                    break;
+                    System.out.println("Description:\t" + getCityDescription(cityName) + ""); break;
             }
         }
     }
@@ -81,7 +83,7 @@ class DataParser {
     }
 
     public String getCityMission(String missionType, String cityName) {
-        List<String> allowedMissionTypes =  Arrays.asList("Main Mission", "Side Mission");
+        List<String> allowedMissionTypes = Arrays.asList("Main Mission", "Side Mission");
         if (!allowedMissionTypes.contains(missionType)) {
             throw new IllegalArgumentException("Mission Type is not valid. Please input Main Mission OR Side Mission");
         }
@@ -95,6 +97,10 @@ class DataParser {
     // currently set to return an int - just like the json file
     public String getCityVillain(String cityName) {
         return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asText();
+    }
+
+    public void removeVillain(String cityName) {
+        ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");
     }
 
     protected List<String> getCityKeys(String cityName) {
@@ -115,6 +121,10 @@ class DataParser {
         return result;
     }
 
+    public String getIntro() {
+        return root.path(INTRO_NODE).asText();
+    }
+
     public boolean isCharacter(String characterName) {
         JsonNode result = root.path(CHARACTER_NODE).get(characterName);
         return result != null;
@@ -122,6 +132,10 @@ class DataParser {
 
     public int getCharacterHealth(String characterName) {
         return root.path(CHARACTER_NODE).path(characterName).path(HEALTH_NODE).asInt();
+    }
+
+    public int getSteroid() {
+        return root.path(STEROID_NODE).path(HEALTH_NODE).asInt();
     }
 
     // at the moment, it will grab multiple powers - if in the future we decide to add more
@@ -152,7 +166,7 @@ class DataParser {
             JsonNode characterInformation = root.path(CHARACTER_NODE).path(characterName);
             // allows you to pass in a JsonNode and it returns a Java Object of your choosing (as long as it has the proper fields)
             result = mapper.treeToValue(characterInformation, Character.class);
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return result;
