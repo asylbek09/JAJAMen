@@ -30,7 +30,6 @@ import java.util.List;
  * grab a mutant's powers
  * grab the damage value of a mutant's specific power
  */
-// TODO: Refactor code, several opportunities for DRY (Don't repeat yourself)
 class DataParser {
     // the key values to target objects within the game data JSON file
     static String CITY_NODE = "city";
@@ -41,10 +40,10 @@ class DataParser {
     static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
     static String STEROID_NODE = "steroid";
+    static String INTRO_NODE = "intro";
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
     //static String FILE_PATH = "data/%s.json";
-    // TODO: Currently have to manually uncomment - Potentially, make this a toggle
     // static String FILE_PATH = "data/%s.json";
     static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
     ObjectMapper mapper;
@@ -79,7 +78,7 @@ class DataParser {
                 case ("villain"):
                     System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n"); break;
                 case ("description"):
-                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n"); break;
+                    System.out.println("Description:\t" + getCityDescription(cityName) + ""); break;
             }
         }
     }
@@ -88,7 +87,6 @@ class DataParser {
         return root.path(CITY_NODE).path(cityName).path(DESCRIPTION_NODE).asText();
     }
 
-    // TODO: Can this method be done in a better way?
     public String getCityMission(String missionType, String cityName) {
         List<String> allowedMissionTypes = Arrays.asList("Main Mission", "Side Mission");
         if (!allowedMissionTypes.contains(missionType)) {
@@ -110,25 +108,26 @@ class DataParser {
         ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");;
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     protected List<String> getCityKeys(String cityName) {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).path(cityName).fieldNames().forEachRemaining(result::add);
         return result;
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     protected List<String> getCityValues(String cityName) {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).path(cityName).forEach(property -> result.add(property.asText()));
         return result;
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     public List<String> getAllCities() {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).fieldNames().forEachRemaining(result::add);
         return result;
+    }
+
+    public String getIntro() {
+        return root.path(INTRO_NODE).asText();
     }
 
     public boolean isCharacter(String characterName) {

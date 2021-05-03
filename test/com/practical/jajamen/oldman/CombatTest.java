@@ -18,11 +18,6 @@ public class CombatTest {
     private String cityName;
     private DataParser dp = new DataParser("data");
 
-//    @Before
-//    public void setUp() throws IOException {
-//        combat = new Combat(hero, villain);
-//    }
-
     @Test
     public void testInitialHealthValues(){
         assertEquals(hero.getHealth(), 40);
