@@ -25,7 +25,6 @@ public class OpenScreen {
     }
 
     public void introduction() {
-
         ip.displayTextStream(dp.getIntro());
     }
 
