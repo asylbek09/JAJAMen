@@ -18,7 +18,7 @@
     "Reaver's Lair": {
       "Main Mission": "North Mexico",
       "item": "steroid",
-      "villain": "Revars",
+      "villain": "Reavers",
       "description": "Help Mystique so you can get money to buy a boat for yourself and professor X, Break into Revear's to help Mystique gather the documentation."
     },
     "North Mexico": {
@@ -50,7 +50,7 @@
     "Canadian Border": {
       "Main Mission": "Eden",
       "item": "steroid",
-      "villain": "X-24",
+      "villain": "Apocalypse",
       "description": "You're at the boarder with the young mutant escapees. You prepare to transport Laura and the group to Eden"
     },
     "Eden": {
