@@ -97,6 +97,10 @@ class DataParser {
         ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("villain");
     }
 
+    public void removeSteroid(String cityName) {
+        ((ObjectNode) root.path(CITY_NODE).path(cityName)).remove("item");
+    }
+
     protected List<String> getCityKeys(String cityName) {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).path(cityName).fieldNames().forEachRemaining(result::add);
