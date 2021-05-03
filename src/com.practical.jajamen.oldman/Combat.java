@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 
 public class Combat {
 
-    // TODO: Refactor in to several methods
-    // TODO: Catch and handle the error that is being thrown
     InputParser ip;
 
     public Combat(Character hero, Character villain, String cityName, DataParser dp) throws IOException {

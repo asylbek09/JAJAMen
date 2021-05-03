@@ -16,7 +16,6 @@ class Game {
 
     boolean quit = false;
     boolean introComplete = false;
-    // TODO: Establish a point in the game, or condition, where the player wins and finishes the game
     boolean gameFinished = false;
 
     Game() {
@@ -45,8 +44,6 @@ class Game {
         }
     }
 
-    // TODO: Separate chunks of the logic into separate methods
-    // TODO: DRY (Don't repeat yourself)
     public void gameLogic() {
         /*
          * !!!!!!!!!!!!!!!!!! HEY THERE !!!!!!!!!!!!!!!!!!
