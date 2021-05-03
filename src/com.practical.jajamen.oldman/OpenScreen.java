@@ -3,6 +3,8 @@ package com.practical.jajamen.oldman;
 public class OpenScreen {
 
     InputParser ip = new InputParser();
+    DataParser dp = new DataParser("data");
+
     public void introScreen() {
         ip.displayTextStream
                 (" ██████╗██╗    ██████╗     ███╗   ███╗█████╗███╗   ██╗      ███╗   ███████████╗    ██╗    ██████████████╗██╗████████╗  █████████╗\n" +
@@ -16,31 +18,18 @@ public class OpenScreen {
     }
 
     public void printInstructions() {
-        ip.displayTextStream("\nType one of the following ");
-        ip.displayTextStream("\t\n play - Start the game!");
-        ip.displayTextStream("\t\n read - Learn how awesome the creators are!");
-        ip.displayTextStream("\t\n quit - Quit and miss out on greatness");
+        ip.displayTextStream("\n\nType one of the following:\n");
+        ip.displayTextStream("\tplay - Start the game!\n");
+        ip.displayTextStream("\tread - Learn how awesome the creators are!\n");
+        ip.displayTextStream("\tquit - Quit and miss out on greatness!\n");
     }
 
-    //Game starts when user pressed #1 and the intro to the game will begin
     public void introduction() {
 
-        String text = "";
-        //Code to have letter print one by one
-        char[] charArr = text.toCharArray();
-
-        // TODO: Re-implemented in inputParser, should this be here?
-        for (int i = 0; i <= charArr.length - 1; i++) {
-            System.out.print(charArr[i]);
-            try {
-                Thread.sleep(0);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        ip.displayTextStream(dp.getIntro());
     }
 
     public void creatorDescription() {
-        System.out.println("These creators are the best!!!");
+        ip.displayTextStream("These creators are the best!!!");
     }
 }

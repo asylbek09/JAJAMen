@@ -1,25 +1,25 @@
 {
-  "intro": "Hey, It’s your favorite antihero Deadpool here!\n\" +\n \"You’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\\n\" +\n \"God, I hate that guy.\\n\" +\n \"Anywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\\n\" +\n\"Logan also known as the dashingly good-looking, Wolverine.\\n\";",
+  "intro": "\nHey, It’s your favorite antihero Deadpool here!\nYou’re probably wondering why I’m here..and no, I’m not the jack ass Deadpool from X-Men Origins.\nGod, I hate that guy.\nAnywhooooooo, we are going on a little journey and we get to follow one of my FAVORITE superheros!\nLogan also known as the dashingly good-looking, Wolverine.\n",
 
   "city": {
     "El Paso": {
       "Main Mission": "Oklahoma City",
       "item": "steroid",
       "villain": "Magneto",
-      "description": "Logan wakes up in his car and hears gang members trying to steal his rims to sell \n.Logan: ...Uh. Please stop, guys. Those,.. those are chrome plated lugs.\nGang members: **They shoot him in the chest and Logan  falls over**\nLogan:…….Fuck…..Guys... seriously...(gets to his feet).You don’t wanna do this. "
+      "description": "Logan wakes up in his car and hears gang members trying to steal his rims to sell.\nLogan: ...Uh. Please stop, guys. Those,.. those are chrome plated lugs.\nGang members: **They shoot him in the chest and Logan  falls over**\nLogan:…….Fuck…..Guys... seriously...(gets to his feet).You don’t wanna do this."
     },
     "Oklahoma City": {
       "Main Mission": "North Mexico",
       "Side Mission": "Reaver's Lair",
       "item": "steroid",
       "villain": "Reavers",
-      "description": "**Logan gets a call about a job and learns the truth about Laura**\nGabriela: Logan, Laura is a clone of you, she’s your daughter.\n"
+      "description": "Logan gets a call about a job and learns the truth about Laura\nGabriela: Logan, Laura is a clone of you, she’s your daughter."
     },
     "Reaver's Lair": {
       "Main Mission": "North Mexico",
       "item": "steroid",
       "villain": "Revars",
-      "description": "Help Mystique so you can get money to buy a boat for yourself and professor X, Break into Revear's to help Mystique gather the documentation ."
+      "description": "Help Mystique so you can get money to buy a boat for yourself and professor X, Break into Revear's to help Mystique gather the documentation."
     },
     "North Mexico": {
       "Main Mission": "North Dakota",
@@ -32,14 +32,14 @@
       "Main Mission": "North Dakota",
       "item": "steroid",
       "villain": "Dr Rice",
-      "description": "Rescue Caliban from capture!\nCaliban is suffering a lot from the tortures and hasn't quite gave up on his fellows. He is held in a fully secured van and with Laura and Charles super powers you might have shot!\nYou gotta make it fast and quick, get in take caliban, and get out...MAKE SURE YOU HAVE HIGH HEALTH LEVEL...RISK IS HIGH, KILL EM FAST...\n"
+      "description": "Rescue Caliban from capture!\nCaliban is suffering a lot from the tortures and hasn't quite gave up on his fellows. He is held in a fully secured van and with Laura and Charles super powers you might have shot!\nYou gotta make it fast and quick, get in take caliban, and get out...MAKE SURE YOU HAVE HIGH HEALTH LEVEL...RISK IS HIGH, KILL EM FAST..."
     },
     "North Dakota": {
       "Main Mission": "Canadian Border",
       "Side Mission": "The Munson Family",
       "item": "steroid",
       "villain": "Juggernaut",
-      "description": "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\nDo you want to help them to catch horses or keep moving?"
+      "description": "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\nDo you want to go for dinner or keep going with main mission?"
     },
     "The Munson Family": {
       "Main Mission": "Canadian Border",

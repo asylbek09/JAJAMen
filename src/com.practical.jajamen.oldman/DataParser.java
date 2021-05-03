@@ -40,6 +40,7 @@ class DataParser {
     static String HEALTH_NODE = "health";
     static String POWER_NODE = "power";
     static String STEROID_NODE = "steroid";
+    static String INTRO_NODE = "intro";
 
     // the assumed file directory ("./" is not required, the following path is considered relative)
     //static String FILE_PATH = "data/%s.json";
@@ -77,7 +78,7 @@ class DataParser {
                 case ("villain"):
                     System.out.println("You can fight:\t" + getCityVillain(cityName) + "\n"); break;
                 case ("description"):
-                    System.out.println("Description:\t" + getCityDescription(cityName) + "\n"); break;
+                    System.out.println("Description:\t" + getCityDescription(cityName) + ""); break;
             }
         }
     }
@@ -123,6 +124,10 @@ class DataParser {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).fieldNames().forEachRemaining(result::add);
         return result;
+    }
+
+    public String getIntro() {
+        return root.path(INTRO_NODE).asText();
     }
 
     public boolean isCharacter(String characterName) {
