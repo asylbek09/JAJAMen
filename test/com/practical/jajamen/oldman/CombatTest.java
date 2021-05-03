@@ -16,7 +16,7 @@ public class CombatTest {
     private Character villain = new Character("Bad Guy", 30, power, 0);
     private Combat combat;
     private String cityName;
-    private DataParser dp = new DataParser("data");
+    private DataParser dp = new DataParser();
 
     @Test
     public void testInitialHealthValues(){
