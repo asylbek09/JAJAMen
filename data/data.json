@@ -26,7 +26,7 @@
       "Side Mission": "Save Caliban",
       "item": "steroid",
       "villain": "Pierce",
-      "description" : "After you failed to rescue Gabriela on time, you quickly drive back to the old factory. \nnPierce, after mutants, arrives there, looking for the Laura and Charles...After Laura hits Pierece, Caliban gets captured by the meavers...Then they attack the factory. \nYou put Charles in the lemo and better try to escape...\nLaura however still is in the factory...\nDo you want to rescue Laura?"
+      "description" : "After you failed to rescue Gabriela on time, you quickly drive back to the old factory. \nnPierce, after mutants, arrives there, looking for the Laura and Charles...After Laura hits Pierece, Caliban gets captured by the meavers... Then they attack the factory. \nYou put Charles in the lemo and better try to escape...\nLaura however still is in the factory...\nDo you want to rescue Laura?"
     },
     "Save Caliban": {
       "Main Mission": "North Dakota",
@@ -39,7 +39,7 @@
       "Side Mission": "The Munson Family",
       "item": "steroid",
       "villain": "Juggernaut",
-      "description": "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see: \nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by \none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide.\nDo you want to go for dinner or keep going with main mission?"
+      "description": "As you enter you see a billboard that reads \nWELCOME TO CORN COUNTRY: HEART OF AMERICA. \nFields on either side of the endless ribbon of road. In the fields are HUGE AUTOMATED THRESHERS/HARVESTERS. The machines are several times bigger than what we see on farms today. \nYou see:\nTHE FAMILY TOWING THE HORSE TRAILER ARE RUN OFF THE ROAD by none of the SAME CAREENING MEGA TRUCKS. Their horse trailer tipping onto its side at an angle, its doors swinging wide."
     },
     "The Munson Family": {
       "Main Mission": "Canadian Border",
@@ -48,8 +48,8 @@
       "description": "You are invited for a decent meal, to show the appreciation!\nThe Munson family and the “Howlett” family all sit around a table covered with food, heads bowed as the son says grace. \nAll except Laura who looks around at the family pictures, the religious decorations (they are everywhere), the warm furnishings. Another strange place.\nSuddenly you hear a vehicle voice outside and realize that The Reavers arrive to capture you and Laura (X-23).\nYou have a choice to run and save Laura, but you put to risk The Munson family or fight but risk your own life and Laura's?"
     },
     "Canadian Border": {
-      "Main Mission": "River North",
-      "item": "",
+      "Main Mission": "Eden",
+      "item": "steroid",
       "villain": "X-24",
       "description": "You're at the boarder with the young mutant escapees. You prepare to transport Laura and the group to Eden"
     },
