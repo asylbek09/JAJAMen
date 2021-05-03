@@ -36,7 +36,7 @@ public class InputParser {
 
     InputParser() {
         scanner = new Scanner(System.in);
-        dataParser = new DataParser("data");
+        dataParser = new DataParser();
     }
 
     // credit to Jasmine for the following method

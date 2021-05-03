@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
  * Adventure will be passed into this class in order to help visualize the game
  * Options for menu creation
  */
-// TODO: Develop a Terminal UI using lanterna, or just go with Swing
 class UserInterface {
 
     UserInterface() {
@@ -35,7 +34,6 @@ class UserInterface {
     }
 
     public static void main(String[] args) {
-        // TODO: Refactor to adhere to OOP, currently running in main for fast prototyping
         UserInterface ui = new UserInterface();
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
         Screen screen = null;

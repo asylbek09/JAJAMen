@@ -20,7 +20,7 @@ class Game {
 
     Game() {
         // insert the name of the JSON file that will be read
-        dataParser = new DataParser("data");
+        dataParser = new DataParser();
         inputParser = new InputParser();
         // the following method allows you to create a character object using the game data
         logan = dataParser.createCharacter("Wolverine");

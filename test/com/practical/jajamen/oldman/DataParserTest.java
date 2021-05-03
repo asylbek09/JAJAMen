@@ -14,7 +14,7 @@ public class DataParserTest {
 
     @Before
     public void setUp() {
-        dp = new DataParser("data");
+        dp = new DataParser();
     }
 
     @Test
