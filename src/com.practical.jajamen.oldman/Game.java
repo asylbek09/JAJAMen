@@ -16,12 +16,11 @@ class Game {
 
     boolean quit = false;
     boolean introComplete = false;
-    // TODO: Establish a point in the game, or condition, where the player wins and finishes the game
     boolean gameFinished = false;
 
     Game() {
         // insert the name of the JSON file that will be read
-        dataParser = new DataParser("data");
+        dataParser = new DataParser();
         inputParser = new InputParser();
         // the following method allows you to create a character object using the game data
         logan = dataParser.createCharacter("Wolverine");
@@ -45,8 +44,6 @@ class Game {
         }
     }
 
-    // TODO: Separate chunks of the logic into separate methods
-    // TODO: DRY (Don't repeat yourself)
     public void gameLogic() {
         /*
          * !!!!!!!!!!!!!!!!!! HEY THERE !!!!!!!!!!!!!!!!!!

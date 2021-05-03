@@ -7,16 +7,12 @@ import java.util.Scanner;
 public class InputParser {
     static String SPACE_DELIMITER = " ";
     static String CHAR_DELIMITER = "";
-    // TODO: Find a setting that is pleasing
-    // TODO: Create a way for the user to be able to modify the speed during gameplay
-    // TODO: Create a "menu" for the user to be modify game settings (textSpeed, saveGame, etc...)
     static int TIME_BETWEEN_CHAR = 0;
     private Scanner scanner;
     private DataParser dataParser;
     private String verb;
     private String subject;
 
-    // TODO: Provide more words for Lists below, allows the player more freedom
     List<String> allowedVerbs = Arrays.asList(
             // fill with verbs based on movement
             "go", "run", "hop", "skip", "jump", "walk", "mope", "meander", "wobble", "crawl"
@@ -40,7 +36,7 @@ public class InputParser {
 
     InputParser() {
         scanner = new Scanner(System.in);
-        dataParser = new DataParser("data");
+        dataParser = new DataParser();
     }
 
     // credit to Jasmine for the following method

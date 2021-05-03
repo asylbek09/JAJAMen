@@ -6,11 +6,6 @@ import java.io.InputStreamReader;
 
 public class Combat {
 
-    // TODO: End the fight when one Character has no more health
-    // TODO: Declare a winner, the user won't know who won otherwise
-    // TODO: Refactor in to several methods
-    // TODO: Catch and handle the error that is being thrown
-    // TODO: Change the souts to instead print from the inputParser
     public Combat(Character hero, Character villain) throws IOException {
         int hero_health = hero.getHealth();
         int villain_health = villain.getHealth();

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -24,7 +25,6 @@ import java.util.*;
  *      grab a mutant's powers
  *      grab the damage value of a mutant's specific power
  */
-// TODO: Refactor code, several opportunities for DRY (Don't repeat yourself)
 class DataParser {
     // the key values to target objects within the game data JSON file
     static String CITY_NODE = "city";
@@ -35,23 +35,15 @@ class DataParser {
     static String HEALTH_NODE = "steroid";
     static String POWER_NODE = "power";
 
-    // the assumed file directory ("./" is not required, the following path is considered relative)
-    //static String FILE_PATH = "data/%s.json";
-    // TODO: Currently have to manually uncomment - Potentially, make this a toggle
-    // static String FILE_PATH = "data/%s.json";
-    static String FILE_PATH = "C:\\Users\\asylb\\OneDrive\\Documents\\TLG\\Practical applications\\JAJAMen\\data\\data.json";
+    private ObjectMapper mapper;
 
     // this will soon hold the entry point for the game dataParser file
     private JsonNode root;
-    ObjectMapper mapper;
 
-    DataParser(String fileName) {
+    DataParser() {
         try {
             // grabs the game dataParser file
-            byte[] gameData = Files.readAllBytes(
-                    // combines the fileName with the assumed filePath "./data/fileName.json"
-                    Paths.get(String.format(FILE_PATH, fileName))
-            );
+            InputStream gameData = getClass().getResourceAsStream("/data.json");
             // create a mapper to read through the game data
             mapper = new ObjectMapper();
             // create the JSON starting point
@@ -88,7 +80,6 @@ class DataParser {
         return root.path(CITY_NODE).path(cityName).path(DESCRIPTION_NODE).asText();
     }
 
-    // TODO: Can this method be done in a better way?
     public String getCityMission(String missionType, String cityName) {
         List<String> allowedMissionTypes =  Arrays.asList("Main Mission", "Side Mission");
         if (!allowedMissionTypes.contains(missionType)) {
@@ -106,21 +97,18 @@ class DataParser {
         return root.path(CITY_NODE).path(cityName).path(VILLAIN_NODE).asText();
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     protected List<String> getCityKeys(String cityName) {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).path(cityName).fieldNames().forEachRemaining(result::add);
         return result;
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     protected List<String> getCityValues(String cityName) {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).path(cityName).forEach(property -> result.add(property.asText()));
         return result;
     }
 
-    // TODO: Can it be used now? Can it be used in the future? Is this needed? Can this be removed?
     public List<String> getAllCities() {
         List<String> result = new ArrayList<>();
         root.path(CITY_NODE).fieldNames().forEachRemaining(result::add);
