@@ -1,6 +1,5 @@
 package com.practical.jajamen.oldman;
 
-import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,6 +29,7 @@ public class Combat {
                     int health_steroid = dp.getSteroid() + hero.getHealth();
                     hero.setHealth(health_steroid);
                     hero.setSteroid(hero.getSteroid() - 1);
+                    dp.removeSteroid(cityName);
                 } else {
                     ip.displayTextStream("You don't have any steroid to boost your health!\n");
                 }
