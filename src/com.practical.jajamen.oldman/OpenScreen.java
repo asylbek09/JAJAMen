@@ -3,7 +3,7 @@ package com.practical.jajamen.oldman;
 public class OpenScreen {
 
     InputParser ip = new InputParser();
-    DataParser dp = new DataParser("data");
+    DataParser dp = new DataParser();
 
     public void introScreen() {
         ip.displayTextStream

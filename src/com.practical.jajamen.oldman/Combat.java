@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Combat {
-
+    InputParser ip;
 
     public Combat(Character hero, Character villain, String cityName, DataParser dp) throws IOException {
         ip = new InputParser();
