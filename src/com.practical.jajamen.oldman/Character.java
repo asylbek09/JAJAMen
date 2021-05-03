@@ -3,10 +3,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Character {
-    protected String name;
-    protected int health;
-    protected Map<String, Integer> power;
-    protected int steroid;
+    private String name;
+    private int health;
+    private Map<String, Integer> power;
+    private int steroid;
 
     Character() {
     }
@@ -22,16 +22,12 @@ public class Character {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getHealth() {
         return health;
     }
 
     public void setHealth(int health) {
-        this.health += health;
+        this.health = health;
     }
 
     public Map<String, Integer> getPower() {
@@ -67,7 +63,6 @@ public class Character {
                 '}';
     }
 
-    // jeff: created equals in order to compare diff instances
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,7 +72,6 @@ public class Character {
                 getPower().equals(character.getPower());
     }
 
-    // jeff: created hashcode in order to compare diff instances
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getPower());

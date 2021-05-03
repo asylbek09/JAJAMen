@@ -22,14 +22,9 @@ import java.util.concurrent.TimeUnit;
  * Options for menu creation
  */
 class UserInterface {
-//    Adventure adventure = null;
 
     UserInterface() {
     }
-
-//    UserInterface(Adventure adventure) {
-//        this.adventure = adventure;
-//    }
 
     // creates a gap between components
     private EmptySpace space() {
@@ -39,7 +34,6 @@ class UserInterface {
     }
 
     public static void main(String[] args) {
-        // TODO: Refactor to adhere to OOP, currently running in main for fast prototyping
         UserInterface ui = new UserInterface();
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
         Screen screen = null;
